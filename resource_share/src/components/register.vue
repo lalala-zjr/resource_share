@@ -8,6 +8,13 @@
     </div>
     <div class="center">
         <p>登陆</p>
+        <div class="phone">
+            <input type="text" placeholder="请输入你的手机号">
+        </div>
+        <div class="pass">
+            <input type="password" placeholder="请输入你的密码(8-12位)">
+        </div>
+        <button>登录</button>
     </div>
   </div>
 </template>
@@ -76,8 +83,9 @@ h1{
     width: 26%;
     height: 70%;
     border-radius: 5%;
-    box-shadow: 10px 10px 5px #222;
+    box-shadow: 10px 10px 4px #222;
     background-color: rgba(255, 255, 255, 0.3);
+    border: 1px black dashed;
 }
 p{
     margin: 12% 0 0 0;
@@ -86,12 +94,36 @@ p{
     font-size: 24px;
     text-align: center;
 }
-/* .right{
+.phone{
+    position: absolute;
+    top: 26%;
+    left: 15%;
+    width: 70%;
+    height: 50px;
+}
+.pass{
+    position: absolute;
+    top: 44%;
+    left: 15%;
+    width: 70%;
+    height: 50px;
+}
+button{
+    position: absolute;
+    width: 70%;
+    height: 40px;
+    background-color: #354762;
+    color: white;
+    bottom: 10%;
+    left: 15%;
+}
+input{
     box-sizing: border-box;
-    position:absolute;
-    right: 0;
-    top: 0;
-    width: 38%;
+    width: 100%;
     height: 100%;
-} */
+    padding-left: 5%;
+    border:none;
+    border-bottom: 1px solid #ccc;
+    background-color:rgba(255, 255, 255, 0.7)
+}
 </style>
