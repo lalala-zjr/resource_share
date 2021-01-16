@@ -5,7 +5,6 @@
         <h1>欢迎进入考研资料共享平台</h1>
         <img src="../assets/jiantou.png" class="small">
         <div class="time">距离{{year}}考研还有{{time}}天</div>
-        <!-- <img src="../assets/kaoyan1.jpg" class="person"> -->
     </div>
     <div class="center">
         <p>登陆</p>
@@ -43,14 +42,6 @@ export default {
     width: 5%;
     height: 60px;
 }
-/* .person{
-    position: absolute;
-    top: 22%;
-    left: 5%;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-} */
 h1{
     position: absolute;
     top: 5%;
