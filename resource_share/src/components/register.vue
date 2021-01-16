@@ -17,9 +17,17 @@ export default {
   name: 'register',
   data () {
     return {
-      year: '2022',
-      time: '255'
+      year: '',
+      time: ''
     }
+  },
+  created: function () {
+    var myDate = new Date()
+    this.year = myDate.getFullYear() + 1
+    var further = new Date(myDate.getFullYear() + '/12/26')
+    var n = further.getTime() - myDate.getTime()
+    var day = Math.floor(n / 1000 / 60 / 60 / 24)
+    this.time = day
   }
 }
 </script>
