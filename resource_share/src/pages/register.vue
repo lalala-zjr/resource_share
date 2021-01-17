@@ -32,7 +32,6 @@
 </template>
 <script>
 export default {
-  name: 'register',
   data () {
     return {
       a: true,
@@ -66,7 +65,7 @@ export default {
       this.a = true
     },
     enter () {
-      this.$router.push('./main.vue')
+      this.$router.push('./index')
     }
   },
   created: function () {
