@@ -6,13 +6,23 @@
         <img src="../assets/jiantou.png" class="small">
         <div class="time">距离{{year}}考研还有{{time}}天</div>
     </div>
-    <div class="center">
+    <div class="center"  v-show="a">
         <p>登陆</p>
         <div class="phone">
             <input type="text" placeholder="请输入你的手机号">
         </div>
         <div class="pass">
             <input type="password" placeholder="请输入你的密码(8-12位)">
+        </div>
+        <button>登录</button>
+    </div>
+    <div class="center2">
+        <p>登陆</p>
+        <div class="phone">
+            <input type="text" placeholder="请输入你的手机号">
+        </div>
+        <div class="pass2">
+            <input type="password" placeholder="请输入你的验证码"><span v-on:click = "sendT" ref="s">{{send}}</span>
         </div>
         <button>登录</button>
     </div>
@@ -23,8 +33,26 @@ export default {
   name: 'register',
   data () {
     return {
+      a: false,
+      b: true,
+      send: '发送',
       year: '',
       time: ''
+    }
+  },
+  methods: {
+    sendT () {
+      console.log(this.$refs.s)
+      // pointer-events: none
+      this.send = 60
+      var c = setInterval(() => {
+        console.log(this.send)
+        this.send = this.send - 1
+        if (this.send === 1) {
+          clearInterval(c)
+          this.send = '发送'
+        }
+      }, 1000)
     }
   },
   created: function () {
@@ -41,6 +69,9 @@ export default {
 .main{
     position: relative;
     height: 530px;
+}
+.notclick{
+  pointer-events: none;
 }
 .small{
     position: absolute;
@@ -76,7 +107,7 @@ h1{
     width: 100%;
     height: 100%;
 }
-.center{
+.center,.center2{
     position: absolute;
     top: 18%;
     right: 18%;
@@ -108,6 +139,13 @@ p{
     width: 70%;
     height: 40px;
 }
+.pass2{
+    position: absolute;
+    top: 44%;
+    left: 15%;
+    width: 70%;
+    height: 40px;
+}
 button{
     position: absolute;
     width: 70%;
@@ -126,5 +164,19 @@ input{
     border-bottom: 1px solid #ccc;
     background-color:rgba(255, 255, 255, 0.7);
     color: #354762;
+}
+.pass2 input{
+    width: 66%;
+}
+.pass2 span{
+    float: right;
+    width: 34%;
+    height: 100%;
+    background-color: #aaa;
+    color: #333;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    cursor: pointer;
 }
 </style>
