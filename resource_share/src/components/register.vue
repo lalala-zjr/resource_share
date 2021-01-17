@@ -99,14 +99,14 @@ p{
     top: 26%;
     left: 15%;
     width: 70%;
-    height: 50px;
+    height: 40px;
 }
 .pass{
     position: absolute;
     top: 44%;
     left: 15%;
     width: 70%;
-    height: 50px;
+    height: 40px;
 }
 button{
     position: absolute;
@@ -124,6 +124,7 @@ input{
     padding-left: 5%;
     border:none;
     border-bottom: 1px solid #ccc;
-    background-color:rgba(255, 255, 255, 0.7)
+    background-color:rgba(255, 255, 255, 0.7);
+    color: #354762;
 }
 </style>
