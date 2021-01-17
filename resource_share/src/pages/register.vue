@@ -79,7 +79,7 @@ export default {
 <style scoped>
 .main{
     position: relative;
-    height: 530px;
+    height: 548px;
 }
 .notclick{
   pointer-events: none;
