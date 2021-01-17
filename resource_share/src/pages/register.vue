@@ -14,16 +14,18 @@
         <div class="pass">
             <input type="password" placeholder="请输入你的密码(8-12位)">
         </div>
+        <p class="verify" @click = "change1">验证码登录？</p>
         <button>登录</button>
     </div>
-    <div class="center2">
+    <div class="center2" v-show="b">
         <p>登陆</p>
         <div class="phone">
             <input type="text" placeholder="请输入你的手机号">
         </div>
         <div class="pass2">
-            <input type="password" placeholder="请输入你的验证码"><span v-on:click = "sendT" ref="s">{{send}}</span>
+            <input type="password" placeholder="请输入你的验证码"><span v-on:click = "sendT" ref="Fs">{{send}}</span>
         </div>
+        <p class="verify" @click = "change2">密码登录？</p>
         <button>登录</button>
     </div>
   </div>
@@ -33,8 +35,8 @@ export default {
   name: 'register',
   data () {
     return {
-      a: false,
-      b: true,
+      a: true,
+      b: false,
       send: '发送',
       year: '',
       time: ''
@@ -42,17 +44,26 @@ export default {
   },
   methods: {
     sendT () {
-      console.log(this.$refs.s)
+      var this2 = this
+      this2.$refs.Fs.classList.add('notclick')
       // pointer-events: none
-      this.send = 60
-      var c = setInterval(() => {
-        console.log(this.send)
-        this.send = this.send - 1
-        if (this.send === 1) {
+      var t = 60
+      var c = setInterval(function () {
+        this2.send = t--
+        if (t === 1) {
           clearInterval(c)
-          this.send = '发送'
+          this2.send = '发送'
+          this2.$refs.Fs.classList.remove('notclick')
         }
       }, 1000)
+    },
+    change1 () {
+      this.a = false
+      this.b = true
+    },
+    change2 () {
+      this.b = false
+      this.a = true
     }
   },
   created: function () {
@@ -178,5 +189,20 @@ input{
     line-height: 40px;
     font-size: 14px;
     cursor: pointer;
+}
+.verify{
+  width: 30%;
+  height: 20px;
+  position: absolute;
+  right: 15%;
+  top: 46%;
+  font-size: 12px;
+  color: #354762;
+  text-align: right;
+  line-height: 20px;
+  cursor: pointer;
+}
+.verify:hover{
+  color: white;
 }
 </style>
