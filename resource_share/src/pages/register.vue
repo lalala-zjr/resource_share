@@ -15,7 +15,7 @@
             <input type="password" placeholder="请输入你的密码(8-12位)">
         </div>
         <p class="verify" @click = "change1">验证码登录？</p>
-        <button>登录</button>
+        <button @click = "enter">登录</button>
     </div>
     <div class="center2" v-show="b">
         <p>登陆</p>
@@ -26,7 +26,7 @@
             <input type="password" placeholder="请输入你的验证码"><span v-on:click = "sendT" ref="Fs">{{send}}</span>
         </div>
         <p class="verify" @click = "change2">密码登录？</p>
-        <button>登录</button>
+        <button @click = "enter">登录</button>
     </div>
   </div>
 </template>
@@ -64,6 +64,9 @@ export default {
     change2 () {
       this.b = false
       this.a = true
+    },
+    enter () {
+      this.$router.push('./main.vue')
     }
   },
   created: function () {
