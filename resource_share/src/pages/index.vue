@@ -3,6 +3,9 @@
     <img src="../assets/banner.png" alt="哎呀呀" class="banner">
     <div class="indroduce">
       <img src="../assets/p1.png" alt="哎呀呀" class="p1">
+      <div class="ind_main">
+        <img src="../assets/learn.png" alt="哎呀呀" class="learn">
+      </div>
     </div>
     <img src="../assets/center.png" alt="哎呀呀" class="center_pic">
     <div class="book"></div>
@@ -34,7 +37,7 @@ export default {
 .p1{
   width: 40%;
   height: 80px;
-  margin: 40px 0 0 30%;
+  margin: 40px 0 0 28%;
 }
 .empty{
   width: 100%;
@@ -46,5 +49,21 @@ export default {
   margin-left: 10%;
   height: 400px;
   background-color: #1d1d1d;
+}
+.ind_main{
+  position: relative;
+  left: 20%;
+  top: 20px;
+  width: 60%;
+  height: 300px;
+  /* background-color: teal; */
+  border: 1px solid black;
+}
+.learn{
+  position: absolute;
+  width: 260px;
+  height: 220px;
+  right: 0;
+  top: 0;
 }
 </style>
