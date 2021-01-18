@@ -37,7 +37,7 @@ export default {
 .p1{
   width: 40%;
   height: 80px;
-  margin: 40px 0 0 28%;
+  margin: 60px 0 0 28%;
 }
 .empty{
   width: 100%;
@@ -53,7 +53,7 @@ export default {
 .ind_main{
   position: relative;
   left: 20%;
-  top: 20px;
+  top: 30px;
   width: 60%;
   height: 300px;
   /* background-color: teal; */
