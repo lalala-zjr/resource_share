@@ -1,7 +1,13 @@
 <template>
-  <div>
-    <div>123</div>
-    <div>123</div>
+  <div class="index">
+    <img src="../assets/banner.png" alt="哎呀呀" class="banner">
+    <div class="indroduce">
+      <img src="../assets/p1.png" alt="哎呀呀" class="p1">
+    </div>
+    <img src="../assets/center.png" alt="哎呀呀" class="center_pic">
+    <div class="book"></div>
+    <div class="contact"></div>
+    <div class="empty"></div>
   </div>
 </template>
 <script>
@@ -12,4 +18,33 @@ export default {
 }
 </script>
 <style scoped>
+.index{
+  background-color: #1d2437;
+}
+.banner,.center_pic{
+  width: 80%;
+  margin-left: 10%;
+}
+.indroduce,.book{
+  width: 80%;
+  height: 600px;
+  margin-left: 10%;
+  background-color:white;
+}
+.p1{
+  width: 40%;
+  height: 80px;
+  margin: 40px 0 0 30%;
+}
+.empty{
+  width: 100%;
+  height: 60px;
+  background-color: #1d2437;;
+}
+.contact{
+  width: 80%;
+  margin-left: 10%;
+  height: 400px;
+  background-color: #1d1d1d;
+}
 </style>
