@@ -57,7 +57,7 @@ export default {
   width: 60%;
   height: 300px;
   /* background-color: teal; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .learn{
   position: absolute;
