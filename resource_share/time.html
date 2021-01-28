@@ -17,9 +17,16 @@
         // console.log(now.getMinutes());//分
         // console.log(now.getSeconds());//秒
         // console.log(now.getMilliseconds());//毫秒
-        console.log(now.toLocaleDateString());//年月日
-        console.log(now.toLocaleTimeString());//时分秒
-        console.log(now.toLocaleString());//具体时间
+        // console.log(now.toLocaleDateString());//年月日
+        // console.log(now.toLocaleTimeString());//时分秒
+        // console.log(now.toLocaleString());//具体时间
+        var now2 = new Date(2021,1,1,12,0,0);
+        var t = Math.floor((now2-now)/1000);
+        //console.log(t);//秒
+        console.log("天:" + Math.floor(t/86400));
+        console.log("时:" + Math.floor(t%86400/3600));
+        console.log("分:" + Math.floor(t%3600/60));
+        console.log("秒:" + t%60);
     </script>
 </body>
 </html>
