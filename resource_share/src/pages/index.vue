@@ -1,10 +1,10 @@
 <template>
   <div class="index">
-    <img src="../assets/banner.png" alt="哎呀呀" class="banner">
+    <img src="../assets/index/banner.png" alt="哎呀呀" class="banner">
     <div class="indroduce">
-      <img src="../assets/p1.png" alt="哎呀呀" class="p1">
+      <img src="../assets/index/p1.png" alt="哎呀呀" class="p1">
       <div class="ind_main">
-        <img src="../assets/learn.png" alt="哎呀呀" class="learn">
+        <img src="../assets/index/learn.png" alt="哎呀呀" class="learn">
         <div class="ind_text">
           <h3>择校</h3>
           <p>{{first_1}}</p>
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <img src="../assets/center.png" alt="哎呀呀" class="center_pic">
+    <img src="../assets/index/center.png" alt="哎呀呀" class="center_pic">
     <div class="book">
       <div class="book1">
         <div class="empty1"></div>
@@ -37,7 +37,7 @@
           <div class="book_ind">别驻足，梦想要不停追逐;不认输，熬过黑夜是日出;都清楚，成功就在下一步;路很苦，汗水是最美的书;狂欢呼，相约在巅峰共舞!</div>
           <div class="book_pic">
             <div>
-              <img src="../assets/math.jpg" alt="">
+              <img src="../assets/index/math.jpg" alt="">
               <ul>
                 <li>李永乐系列书籍</li>
                 <li>张宇系列书籍</li>
@@ -46,7 +46,7 @@
               </ul>
             </div>
             <div>
-              <img src="../assets/zhengzhi.jpg" alt="">
+              <img src="../assets/index/zhengzhi.jpg" alt="">
               <ul>
                 <li>肖秀荣全程班系列</li>
                 <li>徐涛强化系列</li>
@@ -55,7 +55,7 @@
               </ul>
             </div>
             <div>
-              <img src="../assets/english.png" alt="">
+              <img src="../assets/index/english.png" alt="">
               <ul>
                 <li>何凯文长难句讲解</li>
                 <li>考研真相相关资料</li>

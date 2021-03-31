@@ -1,9 +1,9 @@
 <template>
   <div class="main">
     <div class="left">
-        <img src="../assets/left1.png" class="left_img">
+        <img src="../assets/register/left1.png" class="left_img">
         <h1>欢迎进入考研资料共享平台</h1>
-        <img src="../assets/jiantou.png" class="small">
+        <img src="../assets/register/jiantou.png" class="small">
         <div class="time">距离{{year}}考研还有{{time}}天</div>
     </div>
     <div class="center"  v-show="a">
