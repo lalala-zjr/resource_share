@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <img src="../assets/index/center.png" alt="哎呀呀" class="center_pic">
+    <img src="../assets/index/cen.png" alt="哎呀呀" class="center_pic">
     <div class="book">
       <div class="book1">
         <div class="empty1"></div>
@@ -66,8 +66,27 @@
           </div>
         </div>
       </div>
-      <div class="book2"></div>
-      <div class="book3"></div>
+      <div class="book2">
+        <img src="../assets/index/cen_pic.png" alt="">
+        <div class="turn">
+          <div>一轮</div>
+          <div>二轮</div>
+          <div>冲刺</div>
+        </div>
+      </div>
+      <div class="book3">
+        <div class="empty1"></div>
+        <p class="classify"><strong>交流中心</strong></p>
+        <p class="classify">COMMUNICATION CENTER</p>
+        <div class="book3_inf">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>
     <div class="contact">
       <h2>联系我们</h2>
@@ -127,7 +146,7 @@ export default {
 }
 .book{
   width: 80%;
-  height: 1200px;
+  height: 1600px;
   margin-left: 10%;
   background-color:white;
 }
@@ -222,10 +241,39 @@ export default {
   width: 100%;
   height: 300px;
   background-color: #f4fafa;
+  position: relative;
+}
+.book2>img{
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  opacity: 0.8;
+}
+.book2>.turn{
+  position: absolute;
+  width: 70%;
+  margin-left: 15%;
+  height: 300px;
+  z-index: 5;
+  color: #f4fafa;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: #666; */
+}
+.turn>div{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 100px;
+  background-color: #ff812a;
+  opacity: 0.8;
 }
 .book3{
   width: 100%;
-  height: 300px;
+  height: 700px;
+  position: relative;
   /* background-color: #f4fafa; */
 }
 .book_pic{
@@ -236,6 +284,23 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.book3_inf{
+  width: 80%;
+  height: 400px;
+  margin-left: 10%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rebeccapurple;
+}
+.book3_inf>div{
+  width:40%;
+  height: 100px;
+  background-color: seagreen;
 }
 .book_pic > div{
   width: 150px;
@@ -307,7 +372,7 @@ ul>p{
   color: whitesmoke;
   position: relative;
 }
-.contact>h2,.contact>h4{
+.contact>h2,.contact>h4,.book3>h2,.book3>h4{
   margin: 0;
   position: absolute;
   width: 80%;
@@ -317,7 +382,7 @@ ul>p{
   text-align: center;
   line-height: 30px;
 }
-.contact>h4{
+.contact>h4,.book3>h4{
   top: 80px;
 }
 .contact>p{
