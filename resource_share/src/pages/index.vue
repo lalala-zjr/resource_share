@@ -79,12 +79,35 @@
         <p class="classify"><strong>交流中心</strong></p>
         <p class="classify">COMMUNICATION CENTER</p>
         <div class="book3_inf">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div>
+            <div class="data">
+              <div class="data1"><b>Sep</b></div>
+              <div class="data2">19</div>
+            </div>
+            <div class="data_inf">
+              <h4>大家学到哪里了呀</h4>
+              <p>
+                <span>时间：{{time_send}}</span>
+                <span>浏览量：{{see}}</span>
+              </p>
+              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
+            </div>
+          </div>
+          <div>
+            <div class="data"></div>
+          </div>
+          <div>
+            <div class="data"></div>
+          </div>
+          <div>
+            <div class="data"></div>
+          </div>
+          <div>
+            <div class="data"></div>
+          </div>
+          <div>
+            <div class="data"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -125,7 +148,9 @@ export default {
       second_2: '关于数学：硕士研究生入学统考数学试卷分为3种:其中针对工科类的为数学一、数学二;针对经济学和管理学类的为数学三(2009年之前管理类为数学三，经济类为数学四，2009年之后大纲将数学三数学四合并)。具体不同专业所使用的试卷种类有具体规定。',
       second_3: '关于英语，英语(一)即原研究生入学统考"英语"，所有学术型硕士研究生(英语专业选考其他语种)(十三大门类，110个一级学科)和部分专业型硕士(法律硕士、临床医学硕士、口腔医学硕士、建筑学硕士、护理硕士、汉语国际教育硕士、公共卫生硕士等)必考英语(一)。英语(二)主要是为高等院校和科研院所招收不考英语(一)的专业学位硕士研究生而设置的具有选拔性质的统考科目。',
       third: '专业课就是根据自己所报的学校中招生简章的考试科目进行复习，每个学校一般有所不同，又分为自主命题和统考。考生主要根据该报考学校招生简章科目进行复习。',
-      last: '参加完12月底的研究生初试，到2月底出成绩之后，若到达报考学校分数线，就要准备复试，主要关注该报考学校网站。若复试成功则该生录取。'
+      last: '参加完12月底的研究生初试，到2月底出成绩之后，若到达报考学校分数线，就要准备复试，主要关注该报考学校网站。若复试成功则该生录取。',
+      see: 296,
+      time_send: '2019-01-29'
     }
   }
 }
@@ -155,7 +180,6 @@ export default {
   height: 80px;
   margin: 60px 0 0 28%;
 }
-
 .empty1{
   width: 100%;
   height: 100px;
@@ -295,14 +319,77 @@ export default {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: rebeccapurple;
+  /* background-color: rebeccapurple; */
 }
 .book3_inf>div{
-  width:40%;
+  position: relative;
+  width: 40%;
   height: 100px;
-  background-color: seagreen;
+  /* background-color: seagreen; */
+  border: 1px solid #666;
 }
-.book_pic > div{
+.data{
+  position: absolute;
+  width: 25%;
+  height: 80px;
+  top: 10px;
+  left: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  border-right: 2px solid #ccc;
+}
+.data1,.data2{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.data1{
+  font-size: 16px;
+  background-color: #ccc;
+}
+.data2{
+  font-size: 12px;
+  /* background-color: #ff812a; */
+}
+.data_inf{
+  position: absolute;
+  width: 70%;
+  height: 90px;
+  left: 29%;
+  top: 5px;
+  /* background-color: blueviolet; */
+}
+.data_inf>p{
+  margin: 0;
+  width: 90%;
+  margin-left: 5%;
+  font-size: 12px;
+  color: #666;
+}
+.data_inf>h4{
+  width: 90%;
+  height: 25px;
+  line-height: 25px;
+  margin: 5px 5% 0;
+  /* background-color: brown; */
+}
+.data_inf>.data_content{
+  width: 90%;
+  margin-top: 5px;
+  margin-left: 5%;
+  height: 40px;
+  font-size: 12px;
+  line-height: 20px;
+  /* text-overflow: ellipsis; */
+  display: -webkit-box; /* 弹性盒模型*/
+  -webkit-box-orient: vertical; /* 文字垂直排列 */
+  -webkit-line-clamp:2; /*文字显示的行数*/
+  overflow: hidden;
+  /* text-indent: 2em; */
+  /* background-color: red; */
+}
+.book_pic>div{
   width: 150px;
   height: 280px;
   /* box-sizing: border-box; */
