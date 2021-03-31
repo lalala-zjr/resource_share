@@ -28,7 +28,23 @@
       </div>
     </div>
     <img src="../assets/center.png" alt="哎呀呀" class="center_pic">
-    <div class="book"></div>
+    <div class="book">
+      <div class="book1">
+        <div class="empty1"></div>
+        <div class="word_book">
+          <p class="classify"><strong>书籍分类</strong></p>
+          <p class="classify">BOOK CLASSIFICATION</p>
+          <div class="book_ind"></div>
+          <div class="book_pic">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="book2"></div>
+      <div class="book3"></div>
+    </div>
     <div class="contact"></div>
     <div class="empty"></div>
   </div>
@@ -57,9 +73,15 @@ export default {
   width: 80%;
   margin-left: 10%;
 }
-.indroduce,.book{
+.indroduce{
   width: 80%;
   height: 940px;
+  margin-left: 10%;
+  background-color:white;
+}
+.book{
+  width: 80%;
+  height: 1200px;
   margin-left: 10%;
   background-color:white;
 }
@@ -71,7 +93,11 @@ export default {
 .empty{
   width: 100%;
   height: 60px;
-  background-color: #1d2437;;
+  background-color: #1d2437;
+}
+.empty1{
+  width: 100%;
+  height: 100px;
 }
 .contact{
   width: 80%;
@@ -137,5 +163,54 @@ export default {
   width: 94%;
   color: #777;
   /* background-color:rebeccapurple; */
+}
+.book1{
+  width: 70%;
+  height: 500px;
+  margin-left: 15%;
+  /* background-color: rgb(167, 153, 180); */
+}
+.word_book{
+  width: 100%;
+  height: 60px;
+}
+.classify{
+  margin: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align:center;
+  /* background-color: rebeccapurple; */
+}
+.book2{
+  width: 100%;
+  height: 300px;
+  background-color: #f4fafa;
+}
+.book3{
+  width: 100%;
+  height: 300px;
+  /* background-color: #f4fafa; */
+}
+.book_pic{
+  width: 80%;
+  height: 240px;
+  margin-left: 10%;
+  /* background-color: rebeccapurple; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.book_pic > div{
+  width: 150px;
+  height: 200px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  /* background-color: rosybrown; */
+}
+.book_ind{
+  width: 100%;
+  height: 60px;
+  /* background-color: seagreen; */
 }
 </style>
