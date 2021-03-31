@@ -83,7 +83,12 @@
           <p>QQ号:1365351516</p>
           <p>邮箱:zhangjinrui111@qq.com</p>
         </div>
-        <div class="right"></div>
+        <div class="right">
+          <input type="text" placeholder="姓名"><br>
+          <input type="text" placeholder="邮箱"><br>
+          <input type="text" placeholder="电话"><br>
+          <input type="text" placeholder="内容">
+        </div>
       </footer>
       <div class="bottom">VUE技术支持考研资料共享与交流平台 关于我们 声明版权 售后服务</div>
     </div>
@@ -350,9 +355,9 @@ footer>.left{
 }
 footer>.right{
   width: 60%;
-  height: 320px;
+  height: 280px;
   position: absolute;
-  top: 0;
+  top: 40px;
   right: 0;
   /* background-color:yellow; */
 }
@@ -366,6 +371,18 @@ footer>.right{
   text-align: center;
   bottom: 0;
   left: 0;
+}
+.right>input{
+  width: 50%;
+  height: 20px;
+  margin: 15px 25%;
+  background-color: #1d1d1d;
+  border: 0;
+  border-bottom: 1px solid #666;
+  color: whitesmoke;
+}
+input::placeholder{
+  color: #ccc;
 }
 .empty{
   width: 100%;
