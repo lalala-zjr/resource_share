@@ -32,7 +32,7 @@
       <div class="book1">
         <div class="empty1"></div>
         <div class="word_book">
-          <p class="classify"><strong>书籍分类</strong></p>
+          <p class="classify"><strong>--- 书籍分类 ---</strong></p>
           <p class="classify">BOOK CLASSIFICATION</p>
           <div class="book_ind">别驻足，梦想要不停追逐;不认输，熬过黑夜是日出;都清楚，成功就在下一步;路很苦，汗水是最美的书;狂欢呼，相约在巅峰共舞!</div>
           <div class="book_pic">
@@ -76,7 +76,7 @@
       </div>
       <div class="book3">
         <div class="empty1"></div>
-        <p class="classify"><strong>交流中心</strong></p>
+        <p class="classify"><strong>--- 交流中心 ---</strong></p>
         <p class="classify">COMMUNICATION CENTER</p>
         <div class="book3_inf">
           <div>
@@ -94,21 +94,77 @@
             </div>
           </div>
           <div>
-            <div class="data"></div>
+            <div class="data">
+              <div class="data1"><b>Sep</b></div>
+              <div class="data2">19</div>
+            </div>
+            <div class="data_inf">
+              <h4>大家学到哪里了呀</h4>
+              <p>
+                <span>时间：{{time_send}}</span>
+                <span>浏览量：{{see}}</span>
+              </p>
+              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
+            </div>
           </div>
           <div>
-            <div class="data"></div>
+            <div class="data">
+              <div class="data1"><b>Sep</b></div>
+              <div class="data2">19</div>
+            </div>
+            <div class="data_inf">
+              <h4>大家学到哪里了呀</h4>
+              <p>
+                <span>时间：{{time_send}}</span>
+                <span>浏览量：{{see}}</span>
+              </p>
+              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
+            </div>
           </div>
           <div>
-            <div class="data"></div>
+            <div class="data">
+              <div class="data1"><b>Sep</b></div>
+              <div class="data2">19</div>
+            </div>
+            <div class="data_inf">
+              <h4>大家学到哪里了呀</h4>
+              <p>
+                <span>时间：{{time_send}}</span>
+                <span>浏览量：{{see}}</span>
+              </p>
+              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
+            </div>
           </div>
           <div>
-            <div class="data"></div>
+            <div class="data">
+              <div class="data1"><b>Sep</b></div>
+              <div class="data2">19</div>
+            </div>
+            <div class="data_inf">
+              <h4>大家学到哪里了呀</h4>
+              <p>
+                <span>时间：{{time_send}}</span>
+                <span>浏览量：{{see}}</span>
+              </p>
+              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
+            </div>
           </div>
           <div>
-            <div class="data"></div>
+            <div class="data">
+              <div class="data1"><b>Sep</b></div>
+              <div class="data2">19</div>
+            </div>
+            <div class="data_inf">
+              <h4>大家学到哪里了呀</h4>
+              <p>
+                <span>时间：{{time_send}}</span>
+                <span>浏览量：{{see}}</span>
+              </p>
+              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
+            </div>
           </div>
         </div>
+        <button>了解更多>></button>
       </div>
     </div>
     <div class="contact">
@@ -171,7 +227,7 @@ export default {
 }
 .book{
   width: 80%;
-  height: 1600px;
+  height: 1700px;
   margin-left: 10%;
   background-color:white;
 }
@@ -296,7 +352,7 @@ export default {
 }
 .book3{
   width: 100%;
-  height: 700px;
+  height: 750px;
   position: relative;
   /* background-color: #f4fafa; */
 }
@@ -327,6 +383,15 @@ export default {
   height: 100px;
   /* background-color: seagreen; */
   border: 1px solid #666;
+}
+.book3>button{
+  width: 10%;
+  height: 40px;
+  background-color: white;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left: 76%;
+  border:0;
 }
 .data{
   position: absolute;
@@ -373,6 +438,9 @@ export default {
   line-height: 25px;
   margin: 5px 5% 0;
   /* background-color: brown; */
+}
+.data_inf>h4:hover{
+  color: #ff812a;
 }
 .data_inf>.data_content{
   width: 90%;
