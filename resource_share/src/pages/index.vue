@@ -34,18 +34,45 @@
         <div class="word_book">
           <p class="classify"><strong>书籍分类</strong></p>
           <p class="classify">BOOK CLASSIFICATION</p>
-          <div class="book_ind"></div>
+          <div class="book_ind">别驻足，梦想要不停追逐;不认输，熬过黑夜是日出;都清楚，成功就在下一步;路很苦，汗水是最美的书;狂欢呼，相约在巅峰共舞!</div>
           <div class="book_pic">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>
+              <img src="../assets/math.jpg" alt="">
+              <ul>
+                <li>李永乐系列书籍</li>
+                <li>张宇系列书籍</li>
+                <li>汤家凤系列书籍</li>
+                <p>更多>></p>
+              </ul>
+            </div>
+            <div>
+              <img src="../assets/zhengzhi.jpg" alt="">
+              <ul>
+                <li>肖秀荣全程班系列</li>
+                <li>徐涛强化系列</li>
+                <li>腿姐总结系列</li>
+                <p>更多>></p>
+              </ul>
+            </div>
+            <div>
+              <img src="../assets/english.png" alt="">
+              <ul>
+                <li>何凯文长难句讲解</li>
+                <li>考研真相相关资料</li>
+                <li>考研英语真题下载</li>
+                <p>更多>></p>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="book2"></div>
       <div class="book3"></div>
     </div>
-    <div class="contact"></div>
+    <div class="contact">
+      <h2>联系我们</h2>
+      <h4>CONTACT US</h4>
+    </div>
     <div class="empty"></div>
   </div>
 </template>
@@ -98,12 +125,6 @@ export default {
 .empty1{
   width: 100%;
   height: 100px;
-}
-.contact{
-  width: 80%;
-  margin-left: 10%;
-  height: 400px;
-  background-color: #1d1d1d;
 }
 .ind_main{
   position: relative;
@@ -166,7 +187,7 @@ export default {
 }
 .book1{
   width: 70%;
-  height: 500px;
+  height: 620px;
   margin-left: 15%;
   /* background-color: rgb(167, 153, 180); */
 }
@@ -194,7 +215,7 @@ export default {
 }
 .book_pic{
   width: 80%;
-  height: 240px;
+  height: 300px;
   margin-left: 10%;
   /* background-color: rebeccapurple; */
   display: flex;
@@ -203,14 +224,85 @@ export default {
 }
 .book_pic > div{
   width: 150px;
-  height: 200px;
-  box-sizing: border-box;
-  border: 1px solid black;
+  height: 280px;
+  /* box-sizing: border-box; */
+  border: 1px solid #ccc;
   /* background-color: rosybrown; */
 }
-.book_ind{
+.book_pic > div > img{
+  width: 150px;
+  height: 180px;
+  display: block;
+  border-bottom:1px solid #ccc;
+  /* background-color: rosybrown; */
+}
+ul{
+  margin: 0;
+  padding: 0;
+  border: 0;
   width: 100%;
   height: 60px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+ul>li{
+  list-style-type:none;
+  width: 90%;
+  height: 20px;
+  margin-left: 5%;
+  box-sizing: border-box;
+  border-bottom: 1px dashed #ccc;
+  line-height: 20px;
+}
+li:before{
+  content: "·";
+  color: #6f90bf;
+}
+li:hover{
+  font-size: 14px;
+  color: #6f90bf;
+}
+ul>p{
+  margin: 0;
+  width: 90%;
+  margin-left: 5%;
+  height: 20px;
+  font-size: 10px;
+  text-align: right;
+  line-height: 20px;
+  color: #aaa;
+  cursor: pointer;
+}
+.book_ind{
+  width: 80%;
+  height: 60px;
+  margin-top: 20px;
+  margin-left: 10%;
+  font-size: 12px;
+  color: #666;
+  /* line-height: 60px; */
+  text-align: center;
   /* background-color: seagreen; */
+}
+.contact{
+  width: 80%;
+  margin-left: 10%;
+  height: 400px;
+  background-color: #1d1d1d;
+  color: whitesmoke;
+  position: relative;
+}
+.contact>h2,.contact>h4{
+  margin: 0;
+  position: absolute;
+  width: 80%;
+  top: 50px;
+  left: 10%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+.contact>h4{
+  top: 80px;
 }
 </style>
