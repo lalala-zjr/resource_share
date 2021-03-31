@@ -85,6 +85,7 @@
         </div>
         <div class="right"></div>
       </footer>
+      <div class="bottom">VUE技术支持考研资料共享与交流平台 关于我们 声明版权 售后服务</div>
     </div>
     <div class="empty"></div>
   </div>
@@ -130,11 +131,7 @@ export default {
   height: 80px;
   margin: 60px 0 0 28%;
 }
-.empty{
-  width: 100%;
-  height: 60px;
-  background-color: #1d2437;
-}
+
 .empty1{
   width: 100%;
   height: 100px;
@@ -300,7 +297,7 @@ ul>p{
 .contact{
   width: 80%;
   margin-left: 10%;
-  height: 600px;
+  height: 560px;
   background-color: #1d1d1d;
   color: whitesmoke;
   position: relative;
@@ -340,7 +337,7 @@ footer{
 footer>.left{
   color:#ccc;
   width: 40%;
-  height: 360px;
+  height: 320px;
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -348,12 +345,31 @@ footer>.left{
   padding: 4% 0 0 4%;
   /* background-color:teal; */
 }
+.left>p{
+  font-size: 12px;
+}
 footer>.right{
   width: 60%;
-  height: 360px;
+  height: 320px;
   position: absolute;
   top: 0;
   right: 0;
   /* background-color:yellow; */
+}
+.bottom{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  font-size: 12px;
+  background-color:#ff812a;
+  line-height: 40px;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+}
+.empty{
+  width: 100%;
+  height: 60px;
+  background-color: #1d2437;
 }
 </style>
