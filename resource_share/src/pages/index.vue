@@ -72,6 +72,19 @@
     <div class="contact">
       <h2>联系我们</h2>
       <h4>CONTACT US</h4>
+      <p>考研·交流中心·数学(李永乐，张宇，汤家凤)·英语(考研真相，英语真题，何凯文系列，新东方全程班等等)·政治(肖秀荣系列，徐涛系列)·下载中心·个人中心</p>
+      <footer>
+        <div class="left">
+          <h4>考研资料交流平台</h4>
+          <p>地址:陕西省西安市长安区西安邮电大学</p>
+          <p>邮编:710043</p>
+          <p>电话:83641409</p>
+          <p>手机:18009240559</p>
+          <p>QQ号:1365351516</p>
+          <p>邮箱:zhangjinrui111@qq.com</p>
+        </div>
+        <div class="right"></div>
+      </footer>
     </div>
     <div class="empty"></div>
   </div>
@@ -287,7 +300,7 @@ ul>p{
 .contact{
   width: 80%;
   margin-left: 10%;
-  height: 400px;
+  height: 600px;
   background-color: #1d1d1d;
   color: whitesmoke;
   position: relative;
@@ -304,5 +317,43 @@ ul>p{
 }
 .contact>h4{
   top: 80px;
+}
+.contact>p{
+  position: absolute;
+  width: 60%;
+  height: 40px;
+  margin-left: 20%;
+  font-size: 12px;
+  /* color:thistle; */
+  top: 120px;
+  text-align: center;
+  line-height: 20px;
+}
+footer{
+  width: 80%;
+  height: 360px;
+  position: absolute;
+  top: 200px;
+  left: 10%;
+  /* background-color:thistle; */
+}
+footer>.left{
+  color:#ccc;
+  width: 40%;
+  height: 360px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 4% 0 0 4%;
+  /* background-color:teal; */
+}
+footer>.right{
+  width: 60%;
+  height: 360px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* background-color:yellow; */
 }
 </style>
