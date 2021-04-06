@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import register from '@/pages/register'
 import index from '@/pages/index'
+import communicate from '@/pages/communicate'
 import math from '../pages/math/math.vue'
 import videopic from '../components/videopic/videopic.vue'
 import NotF from '@/pages/NotF'
@@ -19,6 +20,11 @@ export default new Router({
       path: '/index',
       name: 'index',
       component: index
+    },
+    {
+      path: '/communicate',
+      name: 'communicate',
+      component: communicate
     },
     {
       path: '/math',
