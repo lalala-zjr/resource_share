@@ -17,15 +17,33 @@
                 <el-breadcrumb-item>真题</el-breadcrumb-item>
                 <el-breadcrumb-item>2020年数学一真题讲解</el-breadcrumb-item>
             </el-breadcrumb>
-            <div class="right_video">
+            <div class="right_bottom">
+              <div class="right_video">
                 <videopic></videopic>
+                <videopic></videopic>
+                <videopic></videopic>
+                <videopic></videopic>
+                <videopic></videopic>
+                <videopic></videopic>
+                <videopic></videopic>
+                <videopic></videopic>
+                <videopic></videopic>
+              </div>
+              <div class="math_pages">
+                <el-pagination
+                  :page-size="9"
+                  :pager-count="5"
+                  layout="prev, pager, next"
+                  :total="90">
+                </el-pagination>
+              </div>
             </div>
             <!-- <div class="right_file"></div> -->
         </div>
     </div>
 </template>
 <script>
-import videopic from './videopic/videopic.vue'
+import videopic from '../../components/videopic/videopic.vue'
 export default {
   components: { videopic },
   data () {
@@ -167,7 +185,24 @@ li:first-child{
 .right_video{
     margin-top: 20px;
     width: 100%;
-    height: 600px;
-    background-color: turquoise;
+    height: 1020px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.right_bottom{
+  width: 100%;
+  height: 1160px;
+  margin-bottom: 100px;
+  /* background-color: turquoise; */
+}
+.math_pages{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 </style>
