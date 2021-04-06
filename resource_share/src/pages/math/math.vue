@@ -17,13 +17,17 @@
                 <el-breadcrumb-item>真题</el-breadcrumb-item>
                 <el-breadcrumb-item>2020年数学一真题讲解</el-breadcrumb-item>
             </el-breadcrumb>
-            <div class="right_video"></div>
+            <div class="right_video">
+                <videopic></videopic>
+            </div>
             <!-- <div class="right_file"></div> -->
         </div>
     </div>
 </template>
 <script>
+import videopic from './videopic/videopic.vue'
 export default {
+  components: { videopic },
   data () {
     return {
       data: [{

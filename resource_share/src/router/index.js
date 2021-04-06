@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import register from '@/pages/register'
 import index from '@/pages/index'
-import math from '@/pages/math'
+import math from '@/pages/math/math.vue'
+import videopic from '../pages/math/videopic/videopic.vue'
 import NotF from '@/pages/NotF'
 
 Vue.use(Router)
@@ -22,7 +23,14 @@ export default new Router({
     {
       path: '/math',
       name: 'math',
-      component: math
+      component: math,
+      children: [
+        {
+          path: '/videopic',
+          name: 'videopic',
+          component: videopic
+        }
+      ]
     },
     {
       path: '*',
