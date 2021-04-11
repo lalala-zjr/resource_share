@@ -9,10 +9,10 @@
     <div class="center"  v-show="a">
         <p>登陆</p>
         <div class="phone">
-            <input type="text" placeholder="请输入你的手机号">
+            <input type="text" placeholder="请输入你的手机号" ref="phone">
         </div>
         <div class="pass">
-            <input type="password" placeholder="请输入你的密码(8-12位)">
+            <input type="password" placeholder="请输入你的密码(8-12位)" ref="password">
         </div>
         <p class="verify" @click = "change1">验证码登录？</p>
         <button @click = "enter">登录</button>
@@ -20,13 +20,13 @@
     <div class="center2" v-show="b">
         <p>登陆</p>
         <div class="phone">
-            <input type="text" placeholder="请输入你的手机号">
+            <input type="text" placeholder="请输入你的手机号" ref="phone1">
         </div>
         <div class="pass2">
             <input type="password" placeholder="请输入你的验证码"><span v-on:click = "sendT" ref="Fs">{{send}}</span>
         </div>
         <p class="verify" @click = "change2">密码登录？</p>
-        <button @click = "enter">登录</button>
+        <button @click = "enter2">登录</button>
     </div>
   </div>
 </template>
@@ -65,7 +65,19 @@ export default {
       this.a = true
     },
     enter () {
-      this.$router.push('./index')
+      // console.log(this.$refs.phone.value, this.$refs.password.value)
+      this.axios.post('api/login',
+        this.qs.stringify({
+          userphone: this.$refs.phone.value,
+          password: this.$refs.password.value
+        })
+      ).then((res) => {
+        console.log(res)
+      })
+      // this.$router.push('./index')
+    },
+    enter2 () {
+      console.log(this.$refs.phone1.value, this.$refs.Fs.value)
     }
   },
   created: function () {
