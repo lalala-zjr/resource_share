@@ -2,6 +2,7 @@
     <div class="math">
       <naver></naver>
         <div class="left">
+            <h1>----Math----</h1>
             <h4>目录</h4>
             <div class="left_main">
                 <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
@@ -146,7 +147,7 @@ export default {
     width: 21%;
     /* height: 600px; */
     /* background-color:seagreen; */
-    margin-top: 130px;
+    margin-top: 100px;
     margin-left: 4%;
     margin-right: 5%;
     float: left;
