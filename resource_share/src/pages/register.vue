@@ -66,15 +66,15 @@ export default {
     },
     enter () {
       // console.log(this.$refs.phone.value, this.$refs.password.value)
-      this.axios.post('api/login',
-        this.qs.stringify({
-          userphone: this.$refs.phone.value,
-          password: this.$refs.password.value
-        })
-      ).then((res) => {
-        console.log(res)
-      })
-      // this.$router.push('./index')
+      // this.axios.post('api/login',
+      //   this.qs.stringify({
+      //     userphone: this.$refs.phone.value,
+      //     password: this.$refs.password.value
+      //   })
+      // ).then((res) => {
+      //   console.log(res)
+      // })
+      this.$router.push('./index')
     },
     enter2 () {
       console.log(this.$refs.phone1.value, this.$refs.Fs.value)

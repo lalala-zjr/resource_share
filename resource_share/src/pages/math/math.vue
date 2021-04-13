@@ -34,9 +34,9 @@
               <div class="math_pages">
                 <el-pagination
                   :page-size="9"
-                  :pager-count="10"
+                  :pager-count="9"
                   layout="prev, pager, next"
-                  :total="135">
+                  :total="81">
                 </el-pagination>
               </div>
             </div>

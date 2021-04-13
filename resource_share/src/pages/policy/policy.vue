@@ -2,7 +2,7 @@
     <div class="math">
       <naver></naver>
         <div class="left">
-            <h1>----English----</h1>
+            <h1>----Policy----</h1>
             <h4>目录</h4>
             <div class="left_main">
                 <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
@@ -15,9 +15,9 @@
             </ul>
             <el-breadcrumb separator-class="el-icon-arrow-right">
                 <el-breadcrumb-item>目录</el-breadcrumb-item>
-                <el-breadcrumb-item>考研真相系列</el-breadcrumb-item>
+                <el-breadcrumb-item>李永乐系列</el-breadcrumb-item>
                 <el-breadcrumb-item>真题</el-breadcrumb-item>
-                <el-breadcrumb-item>2020年英语一真题讲解</el-breadcrumb-item>
+                <el-breadcrumb-item>2020年数学一真题讲解</el-breadcrumb-item>
             </el-breadcrumb>
             <div class="right_bottom">
               <div class="right_video">
@@ -55,7 +55,7 @@ export default {
   data () {
     return {
       data: [{
-        label: '考研真相系列',
+        label: '李永乐系列',
         children: [{
           label: '二级 1-1',
           children: [{
@@ -63,7 +63,7 @@ export default {
           }]
         }]
       }, {
-        label: '星火系列',
+        label: '张宇系列',
         children: [{
           label: '二级 2-1',
           children: [{
@@ -76,7 +76,7 @@ export default {
           }]
         }]
       }, {
-        label: '黄皮书系列',
+        label: '汤家凤系列',
         children: [{
           label: '二级 3-1',
           children: [{

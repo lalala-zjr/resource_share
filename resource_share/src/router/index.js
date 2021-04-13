@@ -5,6 +5,7 @@ import index from '@/pages/index'
 import communicate from '@/pages/communicate'
 import math from '../pages/math/math.vue'
 import english from '../pages/english/english.vue'
+import policy from '../pages/policy/policy.vue'
 import person from '../pages/person'
 import videopic from '../components/videopic/videopic.vue'
 import naver from '../components/naver/naver.vue'
@@ -53,6 +54,11 @@ export default new Router({
       path: '/english',
       name: 'english',
       component: english
+    },
+    {
+      path: '/policy',
+      name: 'policy',
+      component: policy
     },
     {
       path: '*',

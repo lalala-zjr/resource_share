@@ -1,5 +1,15 @@
 <template>
   <div class="index">
+    <div id="nav">
+        <ul id="ul">
+            <div id="li">首页</div>
+            <div id="li" @click="jump2">数学</div>
+            <div id="li" @click="jump3">英语</div>
+            <div id="li" @click="jump4">政治</div>
+            <div id="li" @click="jump5">交流</div>
+            <div id="li" @click="jump6">个人</div>
+        </ul>
+    </div>
     <img src="../assets/index/banner.png" alt="哎呀呀" class="banner">
     <div class="indroduce">
       <img src="../assets/index/p1.png" alt="哎呀呀" class="p1">
@@ -194,6 +204,7 @@
   </div>
 </template>
 <script>
+import naver from '../components/naver/naver.vue'
 export default {
   data () {
     return {
@@ -207,6 +218,26 @@ export default {
       last: '参加完12月底的研究生初试，到2月底出成绩之后，若到达报考学校分数线，就要准备复试，主要关注该报考学校网站。若复试成功则该生录取。',
       see: 296,
       time_send: '2019-01-29'
+    }
+  },
+  components: {
+    naver
+  },
+  methods: {
+    jump2 () {
+      this.$router.push('./math')
+    },
+    jump3 () {
+      this.$router.push('./english')
+    },
+    jump4 () {
+      this.$router.push('./policy')
+    },
+    jump5 () {
+      this.$router.push('./communicate')
+    },
+    jump6 () {
+      this.$router.push('./person')
     }
   }
 }
@@ -608,5 +639,39 @@ input::placeholder{
   width: 100%;
   height: 60px;
   background-color: #1d2437;
+}
+#nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(29, 29, 29, 0.8);
+    z-index: 5;
+    color: whitesmoke;
+}
+#ul{
+    margin: 0;
+    padding: 0;
+    width: 40%;
+    height: 100%;
+    /* background-color: teal; */
+    position: absolute;
+    right: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#ul>div{
+    width: 50px;
+    height: 40px;
+    list-style: none;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 20%;
+    font-size: 14px;
+}
+#ul>div:hover{
+    border-bottom: 5px solid #ff812a;
+    cursor: pointer;
 }
 </style>
