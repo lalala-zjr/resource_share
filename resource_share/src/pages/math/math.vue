@@ -1,5 +1,6 @@
 <template>
     <div class="math">
+      <naver></naver>
         <div class="left">
             <h4>目录</h4>
             <div class="left_main">
@@ -44,8 +45,12 @@
 </template>
 <script>
 import videopic from '../../components/videopic/videopic.vue'
+import naver from '../../components/naver/naver.vue'
 export default {
-  components: { videopic },
+  components: {
+    videopic,
+    naver
+  },
   data () {
     return {
       data: [{

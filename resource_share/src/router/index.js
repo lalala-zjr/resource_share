@@ -6,6 +6,7 @@ import communicate from '@/pages/communicate'
 import math from '../pages/math/math.vue'
 import person from '../pages/person'
 import videopic from '../components/videopic/videopic.vue'
+import naver from '../components/naver/naver.vue'
 import NotF from '@/pages/NotF'
 
 Vue.use(Router)
@@ -31,6 +32,11 @@ export default new Router({
       path: '/communicate',
       name: 'communicate',
       component: communicate
+    },
+    {
+      path: '/naver',
+      name: 'naver',
+      component: naver
     },
     {
       path: '/math',
