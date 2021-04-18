@@ -54,46 +54,45 @@
             </header>
         </div>
         <div class="div3">
+            <!-- 学习时间 -->
             <div class="person_learnTime">
                 <div class="data_time">
                     <div class="person_math">
-                        <!-- <span class="course">数学</span> -->
                         <div class="math_word">32.6</div>
                         <div class="math_name">数学时长</div>
                         <img src="./../assets/person/dui.png" alt="" class="dui">
                     </div>
                     <div class="person_math">
-                        <!-- <span class="course">数学</span> -->
                         <div class="math_word">2.4</div>
                         <div class="math_name">英语时长</div>
                         <img src="./../assets/person/dui.png" alt="" class="dui">
                     </div>
                     <div class="person_math">
-                        <!-- <span class="course">数学</span> -->
                         <div class="math_word">5</div>
                         <div class="math_name">政治时长</div>
                         <img src="./../assets/person/dui.png" alt="" class="dui">
                     </div>
                     <div class="person_math">
-                        <!-- <span class="course">数学</span> -->
                         <div class="math_word">40</div>
                         <div class="math_name">总时长</div>
                         <img src="./../assets/person/dui.png" alt="" class="dui">
                     </div>
                 </div>
-                <div class="echarts">
-                    <div class="brokenLine"></div>
-                    <div class="radius"></div>
+                <div class="echarts" v-show="isActive1">
+                    <div class="brokenLine" ref="chart1"></div>
+                    <div class="radius" ref="chart2"></div>
                 </div>
             </div>
-            <!-- <div class="person_information"></div>
-            <div class="person_review"></div>
-            <div class="person_collect"></div>
-            <div class="person_set"></div>
-            <div class="person_quit"></div> -->
+            <!-- 个人信息 -->
+            <div class="person_information" v-show="isActive2"></div>
+            <div class="person_review" v-show="isActive3"></div>
+            <div class="person_collect" v-show="isActive4"></div>
+            <div class="person_set" v-show="isActive5"></div>
+            <div class="person_quit" v-show="isActive6"></div>
         </div>
     </div>
 </template>
+<script src="./js/person1.js"></script>
 <script>
 import naver from '../components/naver/naver.vue'
 export default {
@@ -110,6 +109,9 @@ export default {
   },
   components: {
     naver
+  },
+  mounted () {
+    this.initCharts()
   },
   methods: {
     jump1 () {
@@ -177,6 +179,144 @@ export default {
       this.isActive4 = false
       this.isActive5 = false
       this.isActive6 = true
+    },
+    initCharts () {
+      let myChart1 = this.$echarts.init(this.$refs.chart1)
+      let myChart2 = this.$echarts.init(this.$refs.chart2)
+    //   console.log(this.$refs.chart1)
+      // 绘制图表
+      myChart1.setOption({
+        title: {
+          text: '每周学习时间分布',
+          x:'center',
+          y:'16',
+          textStyle: {
+            fontWeight: 'normal',              //标题颜色
+            color: '#bababa',
+            fontSize: 14
+          },
+        },
+        tooltip: {},
+        legend: {
+          data:['数学','英语','政治'],
+          orient: 'vertical',  //垂直显示
+          right: 10,
+          top: 5,
+          textStyle:{
+            color: '#ccc',
+            fontSize: 12
+          }
+        },
+        xAxis: {
+          data: ['周一','周二','周三','周四','周五','周六','周日'],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#bababa'
+            }
+          },
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: '#bababa', // 颜色
+              type: 'dotted',
+            }
+          }
+        },
+        yAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#bababa'
+            }
+          },
+          axisLine: {
+            show: false,
+          },
+          splitLine: {
+            lineStyle: {
+              type: 'dotted'
+            }
+          }
+        },
+        series: [{
+          name: '数学',
+          type: 'line',
+          symbolSize: 4,
+          data: [2,5,4,3,1,0.5,1.6],
+          smooth: true,
+          color: '#a8adff',
+        },{
+          name: '英语',
+          type: 'line',
+          data: [5,1,0.2,3,1,4,2],
+          smooth: true,
+          color: '#759aa0',
+        },{
+          name: '政治',
+          type: 'line',
+          data: [1,0.3,0.4,1.5,2.8,1.9,4],
+          smooth: true,
+          color: '#e69d87',
+        }]
+      })
+      //    第二个图表
+      myChart2.setOption({
+        title: {
+          text: '今日学习时间分布图',
+          x:'center',
+          y:'16',
+          textStyle: {
+            fontWeight: 'normal',              //标题颜色
+            color: '#bababa',
+            fontSize: 14
+          },
+        },
+        legend: {
+          data:['数学','英语','政治'],
+          orient: 'vertical',  //垂直显示
+          right: 10,
+          top: 10,
+          textStyle:{
+            color: '#ccc',
+            fontSize: 12
+          }
+        },
+        series: [
+          {
+            type: 'pie',
+            radius: ['30%', '55%'],
+            // roseType: 'angle',
+            data:[
+                {
+                  value:5,
+                  name:'数学',
+                  itemStyle: {
+                    normal: {
+                        color: '#a8adff'
+                    }
+                  }
+                },{
+                  value:2,
+                  name:'英语',
+                  itemStyle: {
+                    normal: {
+                        color: '#759aa0'
+                    }
+                  }
+                },{
+                  value:4,
+                  name:'政治',
+                  itemStyle: {
+                    normal: {
+                        color: '#e69d87'
+                    }
+                  }
+                }
+            ]
+          }
+        ]
+      })
     }
   }
 }
@@ -306,9 +446,10 @@ header>div{
     position: absolute;
     left: 12%;
     width: 88%;
-    height: 1000px;
+    /* height: 1000px; */
     background-color: #363649;
     color: white;
+    padding-bottom: 40px;
 }
 .data_time{
     width: 92%;
@@ -375,13 +516,14 @@ header>div{
     height: 100%;
     position: absolute;
     left: 0;
-    background-color: #ccc;
+    background-color: #4a4a5c;
+    color: whitesmoke;
 }
 .radius{
     width: 37%;
     height: 100%;
     position: absolute;
     right: 0;
-    background-color: #999;
+    background-color: #4a4a5c;
 }
 </style>
