@@ -45,17 +45,17 @@
         <div class="div2">
             <header>
                 <div class="header_div1">
-                    <img src="./../assets/person/summy.png" alt="" title="写总结">
+                    <img src="./../assets/person/summy.png" alt="" title="发表" @click="chang7">
                 </div>
                 <div class="header_div2">
-                    <img src="./../assets/person/neww.png" alt="" title="消息">
+                    <img src="./../assets/person/neww.png" alt="" title="消息" @click="chang8">
                 </div>
                 <p class="data_day">{{timer}}</p>
             </header>
         </div>
         <div class="div3">
             <!-- 学习时间 -->
-            <div class="person_learnTime">
+            <div class="person_learnTime" v-show="isActive1">
                 <div class="data_time">
                     <div class="person_math">
                         <div class="math_word">32.6</div>
@@ -78,17 +78,139 @@
                         <img src="./../assets/person/dui.png" alt="" class="dui">
                     </div>
                 </div>
-                <div class="echarts" v-show="isActive1">
+                <div class="echarts">
                     <div class="brokenLine" ref="chart1"></div>
                     <div class="radius" ref="chart2"></div>
                 </div>
             </div>
             <!-- 个人信息 -->
-            <div class="person_information" v-show="isActive2"></div>
-            <div class="person_review" v-show="isActive3"></div>
-            <div class="person_collect" v-show="isActive4"></div>
-            <div class="person_set" v-show="isActive5"></div>
-            <div class="person_quit" v-show="isActive6"></div>
+            <div class="person_information" v-show="isActive2">
+              <div class="inf">
+                <div style="background-color:#7795a1">昵称：嘟嘟嘟</div>
+                <div style="background-color:#dab18c">性别：女</div>
+                <div style="background-color:#ce7970">手机号：18009240559</div>
+                <div style="background-color:#ddd77f">评论：5</div>
+                <div style="background-color:#b07ca3">收藏：9</div>
+                <div style="background-color:#69b369">学习总时长：156时</div>
+              </div>
+              <!-- <div class="inf_2"></div> -->
+            </div>
+            <!-- 评论 -->
+            <div class="person_review" v-show="isActive3">
+              <div class="message">
+                <div class="circle">
+                  <img src="./../assets/person/time_learning.png" alt="">
+                </div>
+                <div class="lineborder">
+                  <div class="review_inf">review：你对这个理解不对你对这个理解不对你对这个理解不对你对这个理解不对</div>
+                  <div class="to_article">to：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
+                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                </div>
+              </div>
+              <div class="message">
+                <div class="circle">
+                  <img src="./../assets/person/time_learning.png" alt="">
+                </div>
+                <div class="lineborder">
+                  <div class="review_inf">review：你对这个理解不对你对这个理解不对你对这个理解不对你对这个理解不对</div>
+                  <div class="to_article">to：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
+                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                </div>
+              </div>
+              <div class="message">
+                <div class="circle">
+                  <img src="./../assets/person/time_learning.png" alt="">
+                </div>
+                <div class="lineborder">
+                  <div class="review_inf">review：你对这个理解不对你对这个理解不对你对这个理解不对你对这个理解不对</div>
+                  <div class="to_article">to：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
+                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                </div>
+              </div>
+              <div class="message">
+                <div class="circle">
+                  <img src="./../assets/person/time_learning.png" alt="">
+                </div>
+                <div class="lineborder">
+                  <div class="review_inf">review：你对这个理解不对你对这个理解不对你对这个理解不对你对这个理解不对</div>
+                  <div class="to_article">to：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
+                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                </div>
+              </div>
+              <div class="message">
+                <div class="circle">
+                  <img src="./../assets/person/time_learning.png" alt="">
+                </div>
+                <div class="lineborder">
+                  <div class="review_inf">review：你对这个理解不对你对这个理解不对你对这个理解不对你对这个理解不对</div>
+                  <div class="to_article">to：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
+                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                </div>
+              </div>
+            </div>
+            <!-- 收藏 -->
+            <div class="person_collect" v-show="isActive4">
+              <div class="message">
+                <div class="circle">
+                  <img src="./../assets/person/love.png" alt="">
+                </div>
+                <div class="lineborder">
+                  <div class="review_inf">课程：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
+                  <div class="to_article">已收藏</div>
+                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                </div>
+              </div>
+              <div class="message">
+                <div class="circle">
+                  <img src="./../assets/person/love.png" alt="">
+                </div>
+                <div class="lineborder">
+                  <div class="review_inf">课程：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
+                  <div class="to_article">已收藏</div>
+                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                </div>
+              </div>
+              <div class="message">
+                <div class="circle">
+                  <img src="./../assets/person/love.png" alt="">
+                </div>
+                <div class="lineborder">
+                  <div class="review_inf">课程：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
+                  <div class="to_article">已收藏</div>
+                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                </div>
+              </div>
+              <div class="message">
+                <div class="circle">
+                  <img src="./../assets/person/love.png" alt="">
+                </div>
+                <div class="lineborder">
+                  <div class="review_inf">课程：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
+                  <div class="to_article">已收藏</div>
+                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                </div>
+              </div>
+            </div>
+            <!-- 设置 -->
+            <div class="person_set" v-show="isActive5">
+              <div class="set_password">
+                <h2>修改密码</h2>
+                <input type="password" placeholder="请输入你的新密码" class="input_password">
+                <button class="submit">提交</button>
+              </div>
+            </div>
+            <!-- 退出登录 -->
+            <div class="person_quit" v-show="isActive6">
+              <h3>是否退出登录？</h3>
+              <div>
+                <button @click="quit_true">是</button>
+                <button @click="quit_false">否</button>
+              </div>
+            </div>
+            <!-- 发表言论 -->
+            <div class="person_send" v-show="isActive7"></div>
+            <!-- 消息队列 -->
+            <div class="person_new" v-show="isActive8"></div>
         </div>
     </div>
 </template>
@@ -104,7 +226,9 @@ export default {
       isActive3: false,
       isActive4: false,
       isActive5: false,
-      isActive6: false
+      isActive6: false,
+      isActive7: false,
+      isActive8: false
     }
   },
   components: {
@@ -139,6 +263,8 @@ export default {
       this.isActive4 = false
       this.isActive5 = false
       this.isActive6 = false
+      this.isActive7 = false
+      this.isActive8 = false
     },
     chang2 () {
       this.isActive1 = false
@@ -147,6 +273,8 @@ export default {
       this.isActive4 = false
       this.isActive5 = false
       this.isActive6 = false
+      this.isActive7 = false
+      this.isActive8 = false
     },
     chang3 () {
       this.isActive1 = false
@@ -155,6 +283,8 @@ export default {
       this.isActive4 = false
       this.isActive5 = false
       this.isActive6 = false
+      this.isActive7 = false
+      this.isActive8 = false
     },
     chang4 () {
       this.isActive1 = false
@@ -163,6 +293,8 @@ export default {
       this.isActive4 = true
       this.isActive5 = false
       this.isActive6 = false
+      this.isActive7 = false
+      this.isActive8 = false
     },
     chang5 () {
       this.isActive1 = false
@@ -171,6 +303,8 @@ export default {
       this.isActive4 = false
       this.isActive5 = true
       this.isActive6 = false
+      this.isActive7 = false
+      this.isActive8 = false
     },
     chang6 () {
       this.isActive1 = false
@@ -179,6 +313,34 @@ export default {
       this.isActive4 = false
       this.isActive5 = false
       this.isActive6 = true
+      this.isActive7 = false
+      this.isActive8 = false
+    },
+    chang7 () {
+      this.isActive1 = false
+      this.isActive2 = false
+      this.isActive3 = false
+      this.isActive4 = false
+      this.isActive5 = false
+      this.isActive6 = false
+      this.isActive7 = true
+      this.isActive8 = false
+    },
+    chang8 () {
+      this.isActive1 = false
+      this.isActive2 = false
+      this.isActive3 = false
+      this.isActive4 = false
+      this.isActive5 = false
+      this.isActive6 = false
+      this.isActive7 = false
+      this.isActive8 = true
+    },
+    quit_true () {
+      this.$router.push('./')
+    },
+    quit_false () {
+      this.$router.go(0)
     },
     initCharts () {
       let myChart1 = this.$echarts.init(this.$refs.chart1)
@@ -446,10 +608,10 @@ header>div{
     position: absolute;
     left: 12%;
     width: 88%;
-    /* height: 1000px; */
+    /* height: 600px; */
     background-color: #363649;
     color: white;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 }
 .data_time{
     width: 92%;
@@ -525,5 +687,140 @@ header>div{
     position: absolute;
     right: 0;
     background-color: #4a4a5c;
+}
+.person_learnTime,.person_information,.person_set,.person_quit,.person_review,.person_collect,.person_send,.person_new{
+  height: calc(100vh - 160px);
+  position: relative;
+}
+.person_review,.person_collect{
+  box-sizing: border-box;
+  padding-top: 50px;
+  overflow: auto;
+}
+.inf{
+  width: 90%;
+  height: 80%;
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.inf>div{
+  width: 28%;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  text-align: center;
+  line-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: whitesmoke;
+  border-radius: 50%;
+}
+.person_quit>h3{
+  margin: 0 40%;
+  padding-top: 100px;
+}
+.person_quit>div{
+  width: 300px;
+  height: 100px;
+  margin-left: 34%;
+}
+button{
+  width: 100px;
+  height: 40px;
+  margin-left: 20px;
+  margin-top: 100px;
+}
+.message{
+  width: 80%;
+  height: 110px;
+  margin-left: 12%;
+  margin-bottom: 30px;
+  /* background-color: #595972; */
+  position: relative;
+  border-left: 1px solid whitesmoke;
+}
+.circle{
+  position: absolute;
+  transform: translate(-50%, -60%);
+}
+.lineborder{
+  position: absolute;
+  width: 80%;
+  height: 90px;
+  left: 2%;
+  top: 10px;
+  box-sizing: border-box;
+  background-color: #4a4a5c;
+  border-radius: 30px;
+}
+.review_inf{
+  position: absolute;
+  width: 80%;
+  height: 60px;
+  /* background-color: teal; */
+  margin-left: 6%;
+  border-bottom: 1px dashed #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #eee;
+  line-height: 60px;
+}
+.to_article{
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  height: 26px;
+  /* background-color: red; */
+  margin-left: 6%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 26px;
+  color: #ccc;
+}
+.review_time_show{
+  position: absolute;
+  width: 30%;
+  height: 20px;
+  /* background-color: yellow; */
+  right: 5%;
+  top: 0;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 100px;
+}
+.set_password{
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  background-color: #4a4a5c;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.set_password>h2{
+  margin-left: 150px;
+}
+.input_password{
+  position: absolute;
+  top: 90px;
+  left: 120px;
+  background-color: #ccc;
+}
+.submit{
+  position: absolute;
+  bottom: 20px;
+  left: 130px;
+  background-color: #ccc;
 }
 </style>

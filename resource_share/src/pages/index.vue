@@ -49,28 +49,22 @@
             <div>
               <img src="../assets/index/math.jpg" alt="">
               <ul>
-                <li>李永乐系列书籍</li>
-                <li>张宇系列书籍</li>
-                <li>汤家凤系列书籍</li>
-                <p>更多>></p>
+                <li v-for="(m, i) in math" v-bind:key="i">{{m.courseName}}</li>
+                <p @click="jump2">更多>></p>
               </ul>
             </div>
             <div>
               <img src="../assets/index/zhengzhi.jpg" alt="">
               <ul>
-                <li>肖秀荣全程班系列</li>
-                <li>徐涛强化系列</li>
-                <li>腿姐总结系列</li>
-                <p>更多>></p>
+                <li v-for="(e, i) in english" v-bind:key="i">{{e.courseName}}</li>
+                <p @click="jump4">更多>></p>
               </ul>
             </div>
             <div>
               <img src="../assets/index/english.png" alt="">
               <ul>
-                <li>何凯文长难句讲解</li>
-                <li>考研真相相关资料</li>
-                <li>考研英语真题下载</li>
-                <p>更多>></p>
+                <li v-for="(p, i) in policy" v-bind:key="i">{{p.courseName}}</li>
+                <p @click="jump3">更多>></p>
               </ul>
             </div>
           </div>
@@ -89,92 +83,22 @@
         <p class="classify"><strong>--- 交流中心 ---</strong></p>
         <p class="classify">COMMUNICATION CENTER</p>
         <div class="book3_inf">
-          <div>
+          <div v-for="(item, i) in data" v-bind:key="i">
             <div class="data">
-              <div class="data1"><b>Sep</b></div>
-              <div class="data2">19</div>
+              <div class="data1"><b>{{item.month}}</b></div>
+              <div class="data2">{{item.day}}</div>
             </div>
             <div class="data_inf">
-              <h4>大家学到哪里了呀</h4>
+              <h4>{{item.reviewTitle}}</h4>
               <p>
-                <span>时间：{{time_send}}</span>
-                <span>浏览量：{{see}}</span>
+                <span>作者: {{item.userName}}</span>
+                <span>浏览量: {{item.reviewSee}}</span>
               </p>
-              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
-            </div>
-          </div>
-          <div>
-            <div class="data">
-              <div class="data1"><b>Sep</b></div>
-              <div class="data2">19</div>
-            </div>
-            <div class="data_inf">
-              <h4>大家学到哪里了呀</h4>
-              <p>
-                <span>时间：{{time_send}}</span>
-                <span>浏览量：{{see}}</span>
-              </p>
-              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
-            </div>
-          </div>
-          <div>
-            <div class="data">
-              <div class="data1"><b>Sep</b></div>
-              <div class="data2">19</div>
-            </div>
-            <div class="data_inf">
-              <h4>大家学到哪里了呀</h4>
-              <p>
-                <span>时间：{{time_send}}</span>
-                <span>浏览量：{{see}}</span>
-              </p>
-              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
-            </div>
-          </div>
-          <div>
-            <div class="data">
-              <div class="data1"><b>Sep</b></div>
-              <div class="data2">19</div>
-            </div>
-            <div class="data_inf">
-              <h4>大家学到哪里了呀</h4>
-              <p>
-                <span>时间：{{time_send}}</span>
-                <span>浏览量：{{see}}</span>
-              </p>
-              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
-            </div>
-          </div>
-          <div>
-            <div class="data">
-              <div class="data1"><b>Sep</b></div>
-              <div class="data2">19</div>
-            </div>
-            <div class="data_inf">
-              <h4>大家学到哪里了呀</h4>
-              <p>
-                <span>时间：{{time_send}}</span>
-                <span>浏览量：{{see}}</span>
-              </p>
-              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
-            </div>
-          </div>
-          <div>
-            <div class="data">
-              <div class="data1"><b>Sep</b></div>
-              <div class="data2">19</div>
-            </div>
-            <div class="data_inf">
-              <h4>大家学到哪里了呀</h4>
-              <p>
-                <span>时间：{{time_send}}</span>
-                <span>浏览量：{{see}}</span>
-              </p>
-              <div class="data_content">我之前学了数学及三级，但是报考了北京邮电大学的计算机专业的电子信息专业不想异地呜呜呜</div>
+              <div class="data_content">{{item.reviewContent}}</div>
             </div>
           </div>
         </div>
-        <button>了解更多>></button>
+        <button @click="jump5">了解更多>></button>
       </div>
     </div>
     <div class="contact">
@@ -217,11 +141,36 @@ export default {
       third: '专业课就是根据自己所报的学校中招生简章的考试科目进行复习，每个学校一般有所不同，又分为自主命题和统考。考生主要根据该报考学校招生简章科目进行复习。',
       last: '参加完12月底的研究生初试，到2月底出成绩之后，若到达报考学校分数线，就要准备复试，主要关注该报考学校网站。若复试成功则该生录取。',
       see: 296,
-      time_send: '2019-01-29'
+      author: 'hhh可怜且轩轩',
+      data: '',
+      math: '',
+      english: '',
+      policy: ''
     }
   },
   components: {
     naver
+  },
+  mounted () {
+    this.axios.post('api/index',
+      this.qs.stringify('')
+    ).then((res) => {
+      console.log(res.data)
+      this.data = res.data.review
+      this.math = res.data.math
+      this.english = res.data.english
+      this.policy = res.data.policy
+      var arr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      for (let i = 0; i < this.data.length; i++) {
+        if (this.data[i].reviewTime) {
+          let str = this.data[i].reviewTime
+          let month = parseInt(str.split('-')[1])
+          let date = parseInt(str.split('-')[2])
+          this.data[i].month = arr[month - 1]
+          this.data[i].day = date
+        }
+      }
+    })
   },
   methods: {
     jump2 () {

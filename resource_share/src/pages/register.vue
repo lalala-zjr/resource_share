@@ -65,16 +65,19 @@ export default {
       this.a = true
     },
     enter () {
-      // console.log(this.$refs.phone.value, this.$refs.password.value)
-      // this.axios.post('api/login',
-      //   this.qs.stringify({
-      //     userphone: this.$refs.phone.value,
-      //     password: this.$refs.password.value
-      //   })
-      // ).then((res) => {
-      //   console.log(res)
-      // })
-      this.$router.push('./index')
+      console.log(this.$refs.phone.value, this.$refs.password.value)
+      this.axios.post('api/login',
+        this.qs.stringify({
+          phone: this.$refs.phone.value,
+          password: this.$refs.password.value
+        })
+      ).then((res) => {
+        console.log(res)
+        if (res.data === true) {
+          this.$router.push('./index')
+        }
+      })
+      // this.$router.push('./index')
     },
     enter2 () {
       console.log(this.$refs.phone1.value, this.$refs.Fs.value)
