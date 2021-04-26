@@ -1,5 +1,6 @@
 <template>
     <div id="nav">
+        <b><p>KY·<span class="color">考研之家</span></p></b>
         <ul>
             <li v-on:click="jump1">{{index}}</li>
             <li v-on:click="jump2">{{math}}</li>
@@ -50,8 +51,25 @@ export default {
     top: 0;
     width: 100%;
     height: 80px;
-    background: rgba(230, 230, 230, 0.5);
+    background: rgba(133, 77, 77, 0.1);
+    /* background: rgba(133, 77, 77, 0.5); */
     z-index: 5;
+}
+.color{
+  color: rgb(96, 96, 145);
+}
+p{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 10%;
+  top: 10px;
+  width: 20%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 28px;
+  border-radius: 30px;
 }
 ul{
     margin: 0;
@@ -60,7 +78,7 @@ ul{
     height: 100%;
     /* background-color: teal; */
     position: absolute;
-    right: 10%;
+    right: 13%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -75,7 +93,7 @@ li{
     /* background-color: thistle; */
 }
 li:hover{
-    border-bottom: 5px solid #ff812a;
+    border-bottom: 5px solid #a5a5e2;
     cursor: pointer;
 }
 </style>

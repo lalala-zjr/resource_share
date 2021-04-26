@@ -73,7 +73,8 @@ export default {
         })
       ).then((res) => {
         console.log(res)
-        if (res.data === true) {
+        if (res.data !== 'error') {
+          this.$store.commit('setToken', { token: res.data })
           this.$router.push('./index')
         }
       })

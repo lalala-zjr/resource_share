@@ -1,6 +1,7 @@
 <template>
   <div class="index">
     <div id="nav">
+      <b><p id="p">KY·<span class="color">考研之家</span></p></b>
         <ul id="ul">
             <div id="li">首页</div>
             <div id="li" @click="jump2">数学</div>
@@ -10,6 +11,17 @@
             <div id="li" @click="jump6">个人</div>
         </ul>
     </div>
+    <!-- <div id="nav">
+        <b><p id="p">KY·<span class="color">考研之家</span></p></b>
+        <ul>
+            <li v-on:click="jump1">{{index}}</li>
+            <li v-on:click="jump2">{{math}}</li>
+            <li v-on:click="jump3">{{english}}</li>
+            <li v-on:click="jump4">{{policy}}</li>
+            <li v-on:click="jump5">{{communicate}}</li>
+            <li v-on:click="jump6">{{person}}</li>
+        </ul>
+    </div> -->
     <img src="../assets/index/banner.png" alt="哎呀呀" class="banner">
     <div class="indroduce">
       <img src="../assets/index/p1.png" alt="哎呀呀" class="p1">
@@ -605,10 +617,26 @@ input::placeholder{
     height: 100%;
     /* background-color: teal; */
     position: absolute;
-    right: 10%;
+    right: 13%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+#p{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 10%;
+  top: 10px;
+  width: 20%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 28px;
+  border-radius: 30px;
+}
+.color{
+  color: #ff812a;
 }
 #ul>div{
     width: 50px;

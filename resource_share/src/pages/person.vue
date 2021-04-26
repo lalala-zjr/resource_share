@@ -1,6 +1,7 @@
 <template>
     <div id="person">
         <div id="nav">
+          <b><p id="p">KY·<span class="color">考研之家</span></p></b>
             <ul id="ul">
                 <div id="li" @click="jump1">首页</div>
                 <div id="li" @click="jump2">数学</div>
@@ -13,7 +14,7 @@
         <div class="div1">
             <div class="img">
                 <img src="./../assets/person/qq.jpg" alt="" class="userImg">
-                <p class="username">嘟嘟嘟</p>
+                <p class="username">{{user.userName}}</p>
                 <ul class="classify">
                     <li ref="change1" :class="{'change':isActive1}"  @click="chang1">
                         <img src="./../assets/person/时间.png" alt="">
@@ -58,22 +59,22 @@
             <div class="person_learnTime" v-show="isActive1">
                 <div class="data_time">
                     <div class="person_math">
-                        <div class="math_word">32.6</div>
+                        <div class="math_word">{{user.userMath}}</div>
                         <div class="math_name">数学时长</div>
                         <img src="./../assets/person/dui.png" alt="" class="dui">
                     </div>
                     <div class="person_math">
-                        <div class="math_word">2.4</div>
+                        <div class="math_word">{{user.userEnglish}}</div>
                         <div class="math_name">英语时长</div>
                         <img src="./../assets/person/dui.png" alt="" class="dui">
                     </div>
                     <div class="person_math">
-                        <div class="math_word">5</div>
+                        <div class="math_word">{{user.userPolicy}}</div>
                         <div class="math_name">政治时长</div>
                         <img src="./../assets/person/dui.png" alt="" class="dui">
                     </div>
                     <div class="person_math">
-                        <div class="math_word">40</div>
+                        <div class="math_word">{{sum}}</div>
                         <div class="math_name">总时长</div>
                         <img src="./../assets/person/dui.png" alt="" class="dui">
                     </div>
@@ -86,12 +87,12 @@
             <!-- 个人信息 -->
             <div class="person_information" v-show="isActive2">
               <div class="inf">
-                <div style="background-color:#7795a1">昵称：嘟嘟嘟</div>
-                <div style="background-color:#dab18c">性别：女</div>
-                <div style="background-color:#ce7970">手机号：18009240559</div>
-                <div style="background-color:#ddd77f">评论：5</div>
-                <div style="background-color:#b07ca3">收藏：9</div>
-                <div style="background-color:#69b369">学习总时长：156时</div>
+                <div style="background-color:#7795a1">昵称：{{user.userName}}</div>
+                <div style="background-color:#dab18c">手机号：{{user.userPhone}}</div>
+                <div style="background-color:#ce7970">学习总时长：{{user.userTime}}</div>
+                <div style="background-color:#ddd77f">评论：{{user.userReview}}</div>
+                <div style="background-color:#b07ca3">收藏：{{user.userCollect}}</div>
+                <div style="background-color:#69b369">发表：{{user.userSend}}</div>
               </div>
               <!-- <div class="inf_2"></div> -->
             </div>
@@ -220,6 +221,9 @@ import naver from '../components/naver/naver.vue'
 export default {
   data () {
     return {
+      user: '',
+      arr1: [],
+      arr2: [],
       timer: 'Sep 15th',
       isActive1: true,
       isActive2: false,
@@ -234,10 +238,37 @@ export default {
   components: {
     naver
   },
+  computed: {
+    // 计算属性的 getter
+    sum: function () {
+      return this.user.userMath + this.user.userEnglish + this.user.userPolicy
+    }
+  },
   mounted () {
     this.initCharts()
+    this.http()
+  },
+  watch: {
+    arr1 (val, oldVal) {
+      console.log(1111, val, oldVal);//val：是新值 oldVal：是旧值
+      this.initCharts(val);
+    },
+    arr2 (val, oldVal) {
+      console.log(2222, val, oldVal);//val：是新值 oldVal：是旧值
+      this.initCharts2(val);
+    }
   },
   methods: {
+    http () {
+      this.axios.post('api/person',
+        this.qs.stringify('')
+      ).then((res) => {
+        console.log(res.data)
+        this.user = res.data
+        this.arr1 = [this.sum, this.user.userBefore, this.user.userTwo, this.user.userThree]
+        this.arr2 = [this.user.userMath, this.user.userEnglish, this.user.userPolicy]
+      })
+    },
     jump1 () {
       this.$router.push('./index')
     },
@@ -337,19 +368,19 @@ export default {
       this.isActive8 = true
     },
     quit_true () {
+      sessionStorage.removeItem("token")
       this.$router.push('./')
     },
     quit_false () {
       this.$router.go(0)
     },
-    initCharts () {
+    initCharts (val) {
       let myChart1 = this.$echarts.init(this.$refs.chart1)
       let myChart2 = this.$echarts.init(this.$refs.chart2)
-    //   console.log(this.$refs.chart1)
       // 绘制图表
       myChart1.setOption({
         title: {
-          text: '每周学习时间分布',
+          text: '每天学习总时长分布',
           x:'center',
           y:'16',
           textStyle: {
@@ -359,18 +390,8 @@ export default {
           },
         },
         tooltip: {},
-        legend: {
-          data:['数学','英语','政治'],
-          orient: 'vertical',  //垂直显示
-          right: 10,
-          top: 5,
-          textStyle:{
-            color: '#ccc',
-            fontSize: 12
-          }
-        },
         xAxis: {
-          data: ['周一','周二','周三','周四','周五','周六','周日'],
+          data: ['大前天','前天','昨日','今日'],
           axisLabel: {
             show: true,
             textStyle: {
@@ -402,26 +423,17 @@ export default {
           }
         },
         series: [{
-          name: '数学',
+          name: '时长',
           type: 'line',
           symbolSize: 4,
-          data: [2,5,4,3,1,0.5,1.6],
+          data: val,
           smooth: true,
           color: '#a8adff',
-        },{
-          name: '英语',
-          type: 'line',
-          data: [5,1,0.2,3,1,4,2],
-          smooth: true,
-          color: '#759aa0',
-        },{
-          name: '政治',
-          type: 'line',
-          data: [1,0.3,0.4,1.5,2.8,1.9,4],
-          smooth: true,
-          color: '#e69d87',
         }]
       })
+    },
+    initCharts2 (val) {
+      let myChart2 = this.$echarts.init(this.$refs.chart2)
       //    第二个图表
       myChart2.setOption({
         title: {
@@ -451,7 +463,7 @@ export default {
             // roseType: 'angle',
             data:[
                 {
-                  value:5,
+                  value:val[0],
                   name:'数学',
                   itemStyle: {
                     normal: {
@@ -459,7 +471,7 @@ export default {
                     }
                   }
                 },{
-                  value:2,
+                  value:val[1],
                   name:'英语',
                   itemStyle: {
                     normal: {
@@ -467,7 +479,7 @@ export default {
                     }
                   }
                 },{
-                  value:4,
+                  value:val[2],
                   name:'政治',
                   itemStyle: {
                     normal: {
@@ -497,17 +509,34 @@ export default {
     margin: 0;
     padding: 0;
     width: 40%;
-    height: 100%;
+    height: 60px;
     /* background-color: teal; */
     position: absolute;
+    top: 10px;
     right: 10%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+#p{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 10%;
+  top: 10px;
+  width: 20%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 28px;
+  border-radius: 30px;
+}
+.color{
+  color: #ff812a;
+}
 #ul>div{
     width: 50px;
-    height: 50px;
+    height: 40px;
     list-style: none;
     text-align: center;
     line-height: 40px;

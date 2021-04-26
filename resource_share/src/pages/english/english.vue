@@ -1,5 +1,5 @@
 <template>
-    <div class="math">
+    <div class="english">
       <naver></naver>
         <div class="left">
             <h1>----English----</h1>
@@ -135,6 +135,13 @@ export default {
       }
     }
   },
+  mounted () {
+    this.axios.post('api/english',
+      this.qs.stringify('')
+    ).then((res) => {
+      console.log(res)
+    })
+  },
   methods: {
     handleNodeClick (data) {
       console.log(data)
@@ -143,6 +150,11 @@ export default {
 }
 </script>
 <style scoped>
+.english{
+  width: 100%;
+  height: 1500px;
+  background:url("./../../assets/english/background3.jpg")
+}
 .left{
     width: 21%;
     /* height: 600px; */

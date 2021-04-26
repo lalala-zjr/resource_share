@@ -1,5 +1,5 @@
 <template>
-    <div class="math">
+    <div class="policy">
       <naver></naver>
         <div class="left">
             <h1>----Policy----</h1>
@@ -135,6 +135,13 @@ export default {
       }
     }
   },
+  mounted () {
+    this.axios.post('api/policy',
+      this.qs.stringify('')
+    ).then((res) => {
+      console.log(res)
+    })
+  },
   methods: {
     handleNodeClick (data) {
       console.log(data)
@@ -143,6 +150,11 @@ export default {
 }
 </script>
 <style scoped>
+.policy{
+  width: 100%;
+  height: 1500px;
+  background:url("./../../assets/policy/background3.jpg")
+}
 .left{
     width: 21%;
     /* height: 600px; */

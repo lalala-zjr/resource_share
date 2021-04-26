@@ -27,6 +27,8 @@ export default {
     width: 240px;
     height: 300px;
     margin: 20px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
 }
 p{
     width: 240px;
@@ -40,7 +42,7 @@ p{
     /* background-color: thistle; */
     margin-left: 5%;
     font-size: 14px;
-    border-bottom: 1px solid #e9e9e9;
+    /* border-bottom: 1px solid #666; */
 }
 .detail_show{
     width: 100%;
@@ -52,6 +54,6 @@ p{
 }
 .detail_show>div{
     width: 30%;
-    height: 40px;
+    height: 30px;
 }
 </style>

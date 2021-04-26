@@ -14,10 +14,10 @@
                 <li>文件</li>
             </ul>
             <el-breadcrumb separator-class="el-icon-arrow-right">
+              <el-breadcrumb-item>考研资料共享</el-breadcrumb-item>
+              <el-breadcrumb-item>数学</el-breadcrumb-item>
                 <el-breadcrumb-item>目录</el-breadcrumb-item>
                 <el-breadcrumb-item>李永乐系列</el-breadcrumb-item>
-                <el-breadcrumb-item>真题</el-breadcrumb-item>
-                <el-breadcrumb-item>2020年数学一真题讲解</el-breadcrumb-item>
             </el-breadcrumb>
             <div class="right_bottom">
               <div class="right_video">
@@ -55,85 +55,34 @@ export default {
   data () {
     return {
       data: [{
-        label: '李永乐系列',
-        children: [{
-          label: '二级 1-1',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
+        label: '李永乐系列'
       }, {
-        label: '张宇系列',
-        children: [{
-          label: '二级 2-1',
-          children: [{
-            label: '三级 2-1-1'
-          }]
-        }, {
-          label: '二级 2-2',
-          children: [{
-            label: '三级 2-2-1'
-          }]
-        }]
+        label: '张宇系列'
       }, {
-        label: '汤家凤系列',
-        children: [{
-          label: '二级 3-1',
-          children: [{
-            label: '三级 3-1-1'
-          }]
-        }, {
-          label: '二级 3-2',
-          children: [{
-            label: '三级 3-2-1'
-          }]
-        }]
+        label: '汤家凤系列'
       }, {
-        label: '李林全程班',
-        children: [{
-          label: '二级 1-1',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
+        label: '李林全程班'
       }, {
-        label: '启航龙腾班',
-        children: [{
-          label: '二级 1-1',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
+        label: '启航龙腾班'
       }, {
-        label: '文都全程班',
-        children: [{
-          label: '二级 1-1',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
+        label: '文都全程班'
       }, {
-        label: '考虫系列班',
-        children: [{
-          label: '二级 1-1',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
+        label: '考虫系列班'
       }, {
-        label: '新东方直通车',
-        children: [{
-          label: '二级 1-1',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
+        label: '新东方直通车'
       }],
       defaultProps: {
         children: 'children',
         label: 'label'
       }
     }
+  },
+  mounted () {
+    this.axios.post('api/math',
+      this.qs.stringify('')
+    ).then((res) => {
+      console.log(res)
+    })
   },
   methods: {
     handleNodeClick (data) {
@@ -143,14 +92,18 @@ export default {
 }
 </script>
 <style scoped>
+.math{
+  width: 100%;
+  height: 1500px;
+  background:url("./../../assets/math/background3.jpg")
+}
 .left{
     width: 21%;
-    /* height: 600px; */
-    /* background-color:seagreen; */
     margin-top: 100px;
     margin-left: 4%;
     margin-right: 5%;
     float: left;
+    /* background-color: rgb(177, 128, 147); */
 }
 .left_main{
     border: 1px solid #f0f0f0;
