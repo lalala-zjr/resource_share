@@ -57,6 +57,7 @@ export default {
 }
 .color{
   color: rgb(96, 96, 145);
+  /* color: #b18093; */
 }
 p{
   margin: 0;
@@ -93,7 +94,8 @@ li{
     /* background-color: thistle; */
 }
 li:hover{
-    border-bottom: 5px solid #a5a5e2;
+    border-bottom: 5px solid #8484b4;
+    /* b18093 */
     cursor: pointer;
 }
 </style>

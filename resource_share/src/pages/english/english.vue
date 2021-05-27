@@ -21,6 +21,7 @@
             </el-breadcrumb>
             <div class="right_bottom">
               <div class="right_video">
+                <!-- <videopic></videopic>
                 <videopic></videopic>
                 <videopic></videopic>
                 <videopic></videopic>
@@ -28,8 +29,7 @@
                 <videopic></videopic>
                 <videopic></videopic>
                 <videopic></videopic>
-                <videopic></videopic>
-                <videopic></videopic>
+                <videopic></videopic> -->
               </div>
               <div class="math_pages">
                 <el-pagination
@@ -45,11 +45,11 @@
     </div>
 </template>
 <script>
-import videopic from '../../components/videopic/videopic.vue'
+// import videopicE from './videopicE/videopicE.vue'
 import naver from '../../components/naver/naver.vue'
 export default {
   components: {
-    videopic,
+    // videopic,
     naver
   },
   data () {
@@ -197,7 +197,7 @@ li{
     padding: 0;
 }
 li:first-child{
-    background-color: black;
+    background-color: #70709c;
     color: white;
 }
 .right_video{

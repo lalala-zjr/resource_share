@@ -8,6 +8,8 @@ import qs from 'qs'
 import echarts from 'echarts'
 import 'element-ui/lib/theme-chalk/index.css'
 import axios from './store/axios'
+// import PDFJS from "pdfjs-dist"
+// import pdfjsLib from "pdfjs-dist"
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false

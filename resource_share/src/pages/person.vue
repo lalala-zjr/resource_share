@@ -26,7 +26,7 @@
                     </li>
                     <li ref="change3" :class="{'change':isActive3}"  @click="chang3">
                         <img src="./../assets/person/review.png" alt="">
-                        <span>评论</span>
+                        <span>发表</span>
                     </li>
                     <li ref="change4" :class="{'change':isActive4}"  @click="chang4">
                         <img src="./../assets/person/collect.png" alt="">
@@ -49,7 +49,8 @@
                     <img src="./../assets/person/summy.png" alt="" title="发表" @click="chang7">
                 </div>
                 <div class="header_div2">
-                    <img src="./../assets/person/neww.png" alt="" title="消息" @click="chang8">
+                    <img src="./../assets/person/neww.png" alt="" title="消息">
+                     <!-- @click="chang8" -->
                 </div>
                 <p class="data_day">{{timer}}</p>
             </header>
@@ -92,20 +93,21 @@
                 <div style="background-color:#ce7970">学习总时长：{{user.userTime}}</div>
                 <div style="background-color:#ddd77f">评论：{{user.userReview}}</div>
                 <div style="background-color:#b07ca3">收藏：{{user.userCollect}}</div>
-                <div style="background-color:#69b369">发表：{{user.userSend}}</div>
+                <div style="background-color:#69b369">发表：1</div>
+                <!-- {{user.userSend}} -->
               </div>
               <!-- <div class="inf_2"></div> -->
             </div>
-            <!-- 评论 -->
+            <!-- 发表 -->
             <div class="person_review" v-show="isActive3">
               <div class="message">
                 <div class="circle">
                   <img src="./../assets/person/time_learning.png" alt="">
                 </div>
                 <div class="lineborder">
-                  <div class="review_inf">review：你对这个理解不对你对这个理解不对你对这个理解不对你对这个理解不对</div>
-                  <div class="to_article">to：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
-                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                  <div class="review_inf">review：猪猪猪</div>
+                  <div class="to_article">to：学习学习！！！！！！！！！！！！！！！！！！</div>
+                  <div class="review_time_show">时间：2021-05-09 22:59:50</div>
                 </div>
               </div>
               <div class="message">
@@ -113,9 +115,9 @@
                   <img src="./../assets/person/time_learning.png" alt="">
                 </div>
                 <div class="lineborder">
-                  <div class="review_inf">review：你对这个理解不对你对这个理解不对你对这个理解不对你对这个理解不对</div>
-                  <div class="to_article">to：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
-                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                  <div class="review_inf">review：肖秀荣</div>
+                  <div class="to_article">to：啊擦科技市场八十抽</div>
+                  <div class="review_time_show">时间：2021-05-09 22:52:33</div>
                 </div>
               </div>
               <div class="message">
@@ -123,9 +125,9 @@
                   <img src="./../assets/person/time_learning.png" alt="">
                 </div>
                 <div class="lineborder">
-                  <div class="review_inf">review：你对这个理解不对你对这个理解不对你对这个理解不对你对这个理解不对</div>
-                  <div class="to_article">to：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
-                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                  <div class="review_inf">review：考研都需要学什么？</div>
+                  <div class="to_article">to：首先需要学习，公共课以及专业课。公共课包括数学，政治，英语，然后专业课是学的408其中包含数据结构，操作系统以及计算机网络和计算机组成原理。数学一，数学二，数学三。嘟嘟嘟</div>
+                  <div class="review_time_show">时间：2021-05-09 22:17:26</div>
                 </div>
               </div>
               <div class="message">
@@ -133,9 +135,9 @@
                   <img src="./../assets/person/time_learning.png" alt="">
                 </div>
                 <div class="lineborder">
-                  <div class="review_inf">review：你对这个理解不对你对这个理解不对你对这个理解不对你对这个理解不对</div>
-                  <div class="to_article">to：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
-                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                  <div class="review_inf">review：嘟嘟</div>
+                  <div class="to_article">to：数学一好难啊？？？？</div>
+                  <div class="review_time_show">时间：2021-05-09 21:57:20</div>
                 </div>
               </div>
               <div class="message">
@@ -143,9 +145,9 @@
                   <img src="./../assets/person/time_learning.png" alt="">
                 </div>
                 <div class="lineborder">
-                  <div class="review_inf">review：你对这个理解不对你对这个理解不对你对这个理解不对你对这个理解不对</div>
-                  <div class="to_article">to：你对于公共课学习的看法以及总结大群嘟嘟嘟</div>
-                  <div class="review_time_show">时间：2021-02-26 15:24</div>
+                  <div class="review_inf">review：推荐书籍哦。</div>
+                  <div class="to_article">to：张宇660，闭关修炼，汤家凤，黄皮书，小刘绒系列，肖秀荣，徐涛啦啦啦啦啦</div>
+                  <div class="review_time_show">时间：2021-04-05 10:37:48</div>
                 </div>
               </div>
             </div>
@@ -194,11 +196,22 @@
             </div>
             <!-- 设置 -->
             <div class="person_set" v-show="isActive5">
-              <div class="set_password">
-                <h2>修改密码</h2>
-                <input type="password" placeholder="请输入你的新密码" class="input_password">
-                <button class="submit">提交</button>
+              <div class="set">
+                <div class="set_phone">
+                  <h3>修改昵称</h3>
+                  <span>新昵称</span>
+                  <input type="text" placeholder="请输入昵称" ref="newName">
+                  <button class="submit1" @click="newName">保存</button>
+                </div>
+                <div class="set_password">
+                  <h3>修改密码</h3>
+                  <span>新密码</span>
+                  <input type="password" placeholder="请输入密码" ref="newPassword">
+                  <button class="submit2" @click="newPassword">保存</button>
+                </div>
               </div>
+              <!-- <div class="set_password">
+              </div> -->
             </div>
             <!-- 退出登录 -->
             <div class="person_quit" v-show="isActive6">
@@ -209,7 +222,13 @@
               </div>
             </div>
             <!-- 发表言论 -->
-            <div class="person_send" v-show="isActive7"></div>
+            <div class="person_send" v-show="isActive7">
+              <input type="text" placeholder="题目" class="title" ref="tit">
+              <br>
+              <textarea ref="text"></textarea>
+              <br>
+              <button id="button" @click="sendINF">发表</button>
+            </div>
             <!-- 消息队列 -->
             <div class="person_new" v-show="isActive8"></div>
         </div>
@@ -268,6 +287,49 @@ export default {
         this.arr1 = [this.sum, this.user.userBefore, this.user.userTwo, this.user.userThree]
         this.arr2 = [this.user.userMath, this.user.userEnglish, this.user.userPolicy]
       })
+    },
+    sendINF () {
+      console.log(this.$refs.tit.value)
+      console.log(this.$refs.text.value)
+      // insertReview
+      if(this.$refs.tit.value.length != 0 && this.$refs.text.value != 0){
+        this.axios.post('api/sendNew',
+          this.qs.stringify({
+            title: this.$refs.tit.value,
+            content: this.$refs.text.value
+          })
+        ).then((res) => {
+          this.$refs.tit.value = ''
+          this.$refs.text.value = ''
+          console.log(res)
+        })
+      }
+    },
+    newName () {
+      if(this.$refs.newName.value){
+        this.axios.post('api/updateN',
+          this.qs.stringify({
+            name: this.$refs.newName.value
+          })
+        ).then((res) => {
+          this.user.userName = this.$refs.newName.value
+          this.$refs.newName.value = ''
+          console.log(res)
+        })
+      }
+    },
+    newPassword () {
+      if(this.$refs.newPassword.value){
+        console.log(this.$refs.newPassword.value)
+        this.axios.post('api/updateP',
+          this.qs.stringify({
+            password: this.$refs.newPassword.value
+          })
+        ).then((res) => {
+          this.$refs.newPassword.value = ''
+          console.log(res)
+        })
+      }
     },
     jump1 () {
       this.$router.push('./index')
@@ -376,7 +438,6 @@ export default {
     },
     initCharts (val) {
       let myChart1 = this.$echarts.init(this.$refs.chart1)
-      let myChart2 = this.$echarts.init(this.$refs.chart2)
       // 绘制图表
       myChart1.setOption({
         title: {
@@ -504,6 +565,31 @@ export default {
     background: rgba(0, 0, 0, 0.8);
     z-index: 5;
     color: whitesmoke;
+}
+.title{
+  width: 60%;
+  height: 40px;
+  margin-left: 20%;
+  margin-top: 50px;
+  color: #ccc;
+}
+textarea{
+  width: 60%;
+  height: 200px;
+  box-sizing: border-box;
+  background-color: #4a4a5c;
+  padding: 1%;
+  color: #ccc;
+  margin-left: 20%;
+  margin-top: 30px;
+  border: 1px solid #999;
+}
+#button{
+  width: 10%;
+  height: 40px;
+  margin: 0;
+  margin-top: 20px;
+  margin-left: 70%;
 }
 #ul{
     margin: 0;
@@ -826,30 +912,89 @@ button{
   font-size: 12px;
   line-height: 100px;
 }
-.set_password{
+.set{
   position: absolute;
-  width: 400px;
-  height: 200px;
-  background-color: #4a4a5c;
-  top: 0;
-  left: 0;
+  width: 80%;
+  height: 350px;
+  /* background-color: #4a4a5c; */
+  border:1px solid #4a4a5c;
+  left: 8%;
+  top: 30px;
   right: 0;
   bottom: 0;
-  margin: auto;
 }
-.set_password>h2{
+input{
+  display: inline-block;
+  box-sizing:border-box;
+  width: 200px;
+  height: 40px;
+  background: none;
+  outline: none;
+  border: 0px;
+  border: 1px solid #999;
+  margin-left: 10px;
+  padding: 0 2% ;
+  color: white;
+}
+.set_phone{
+  position: absolute;
+  width: 70%;
+  height: 150px;
+  margin-left: 15%;
+  top: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.set_password{
+  position: absolute;
+  width: 70%;
+  height: 150px;
+  margin-left: 15%;
+  top: 170px;
+  /* background-color: white; */
+}
+.set_password>span,.set_phone>span{
+  margin-left: 100px;
+}
+.submit2,.submit1{
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  background-color: #ff812a;
+  color: whitesmoke;
+}
+h3{
+  margin: 0;
+  color: #ff812a;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  /* border-bottom: 1px solid #999 */
+}
+/* .set_password{
+  position: absolute;
+  width: 36%;
+  height: 360px;
+  background-color: #4a4a5c;
+  right: 10%;
+  top: 30px;
+} */
+
+/* .set_password>h2,.set_phone>h2{
   margin-left: 150px;
-}
-.input_password{
+  margin-top: 50px;
+} */
+/* .input_password{
   position: absolute;
   top: 90px;
   left: 120px;
   background-color: #ccc;
-}
-.submit{
+} */
+/* .submit{
   position: absolute;
   bottom: 20px;
   left: 130px;
   background-color: #ccc;
-}
+} */
 </style>

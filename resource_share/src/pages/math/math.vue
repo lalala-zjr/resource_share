@@ -10,42 +10,38 @@
         </div>
         <div class="right">
             <ul>
-                <li>视频</li>
-                <li>文件</li>
+                <li :class="{'changeColor':videoS}" @click="video">视频</li>
+                <li :class="{'changeColor': fileS}" @click=" file">文件</li>
             </ul>
             <el-breadcrumb separator-class="el-icon-arrow-right">
               <el-breadcrumb-item>考研资料共享</el-breadcrumb-item>
               <el-breadcrumb-item>数学</el-breadcrumb-item>
                 <el-breadcrumb-item>目录</el-breadcrumb-item>
-                <el-breadcrumb-item>李永乐系列</el-breadcrumb-item>
+                <el-breadcrumb-item>{{math_Name}}</el-breadcrumb-item>
             </el-breadcrumb>
             <div class="right_bottom">
-              <div class="right_video">
-                <videopic></videopic>
-                <videopic></videopic>
-                <videopic></videopic>
-                <videopic></videopic>
-                <videopic></videopic>
-                <videopic></videopic>
-                <videopic></videopic>
-                <videopic></videopic>
-                <videopic></videopic>
+              <div class="right_video" v-show="videoS">
+                <videopic v-for="(math,i) in courseMath" v-bind:key="i" :math="math"></videopic>
               </div>
-              <div class="math_pages">
+              <div class="right_file" v-show="fileS">
+                <div v-for="(f,i) in fileINF" v-bind:key="i">
+                  <a href="./../../assets/math/第二部分一元函数微分学.pdf">题目：{{f.mathName}} </a>
+                </div>
+              </div>
+              <!-- <div class="math_pages">
                 <el-pagination
                   :page-size="9"
                   :pager-count="9"
                   layout="prev, pager, next"
                   :total="81">
                 </el-pagination>
-              </div>
+              </div> -->
             </div>
-            <!-- <div class="right_file"></div> -->
         </div>
     </div>
 </template>
 <script>
-import videopic from '../../components/videopic/videopic.vue'
+import videopic from './videopic/videopic.vue'
 import naver from '../../components/naver/naver.vue'
 export default {
   components: {
@@ -54,23 +50,13 @@ export default {
   },
   data () {
     return {
-      data: [{
-        label: '李永乐系列'
-      }, {
-        label: '张宇系列'
-      }, {
-        label: '汤家凤系列'
-      }, {
-        label: '李林全程班'
-      }, {
-        label: '启航龙腾班'
-      }, {
-        label: '文都全程班'
-      }, {
-        label: '考虫系列班'
-      }, {
-        label: '新东方直通车'
-      }],
+      data: [],
+      math_Name: '李永乐全程',
+      courseMath: '',
+      id: 1,
+      fileS: false,
+      videoS: true,
+      fileINF: '',
       defaultProps: {
         children: 'children',
         label: 'label'
@@ -81,12 +67,43 @@ export default {
     this.axios.post('api/math',
       this.qs.stringify('')
     ).then((res) => {
-      console.log(res)
+      console.log(res.data)
+      this.courseMath = res.data.courseMath
+      var catalogMath = res.data.catalogMath
+      for (let i = 0; i < catalogMath.length; i++) {
+        var obj = {}
+        obj.label = catalogMath[i].courseName
+        obj.id = catalogMath[i].courseId
+        this.data.push(obj)
+      }
+      // console.log(this.data)
     })
   },
   methods: {
     handleNodeClick (data) {
-      console.log(data)
+      // console.log(data.label)
+      this.math_Name = data.label
+      this.id = data.id
+    },
+    video () {
+      this.fileS = false
+      this.videoS = true
+    },
+    file () {
+      this.fileS = true
+      this.videoS = false
+      this.axios.post('api/mathFile',
+        this.qs.stringify(
+          {
+            id: this.id
+          }
+        )
+      ).then((res) => {
+        console.log(res.data)
+        this.fileINF = res.data
+        // for (let i = 0; i < this.fileINF; i++) {
+        // }
+      })
     }
   }
 }
@@ -94,8 +111,8 @@ export default {
 <style scoped>
 .math{
   width: 100%;
-  height: 1500px;
-  background:url("./../../assets/math/background3.jpg")
+  height: 1300px;
+  background:url("./../../assets/math/background3.jpg");
 }
 .left{
     width: 21%;
@@ -136,9 +153,10 @@ li{
     font-size: 14px;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
-li:first-child{
-    background-color: black;
+.changeColor{
+    background-color: #70709c;
     color: white;
 }
 .right_video{
@@ -150,9 +168,28 @@ li:first-child{
     align-items: center;
     flex-wrap: wrap;
 }
+.right_file{
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+.right_file>div{
+  width: 96%;
+  height: 50px;
+  margin: 0 2%;
+  line-height: 50px;
+  border-bottom:1px solid #ccc;
+}
+.right_file>div:nth-last-child(1){
+  border:0;
+}
+.right_file>div:hover{
+  color: #70709c;
+}
 .right_bottom{
   width: 100%;
-  height: 1160px;
+  height: 960px;
   margin-bottom: 100px;
   /* background-color: turquoise; */
 }

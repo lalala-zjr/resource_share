@@ -11,17 +11,6 @@
             <div id="li" @click="jump6">个人</div>
         </ul>
     </div>
-    <!-- <div id="nav">
-        <b><p id="p">KY·<span class="color">考研之家</span></p></b>
-        <ul>
-            <li v-on:click="jump1">{{index}}</li>
-            <li v-on:click="jump2">{{math}}</li>
-            <li v-on:click="jump3">{{english}}</li>
-            <li v-on:click="jump4">{{policy}}</li>
-            <li v-on:click="jump5">{{communicate}}</li>
-            <li v-on:click="jump6">{{person}}</li>
-        </ul>
-    </div> -->
     <img src="../assets/index/banner.png" alt="哎呀呀" class="banner">
     <div class="indroduce">
       <img src="../assets/index/p1.png" alt="哎呀呀" class="p1">
@@ -95,7 +84,7 @@
         <p class="classify"><strong>--- 交流中心 ---</strong></p>
         <p class="classify">COMMUNICATION CENTER</p>
         <div class="book3_inf">
-          <div v-for="(item, i) in data" v-bind:key="i">
+          <div v-for="(item, i) in data" v-bind:key="i" @click="enterINF(item)">
             <div class="data">
               <div class="data1"><b>{{item.month}}</b></div>
               <div class="data2">{{item.day}}</div>
@@ -185,6 +174,9 @@ export default {
     })
   },
   methods: {
+    enterINF (item) {
+      this.$router.push('./comInformation/' + item.reviewId)
+    },
     jump2 () {
       this.$router.push('./math')
     },
@@ -205,7 +197,7 @@ export default {
 </script>
 <style scoped>
 .index{
-  background-color: #1d2437;
+  background-color: #f0e9e5;
 }
 .banner,.center_pic{
   width: 80%;
